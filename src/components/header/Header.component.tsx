@@ -13,8 +13,8 @@ export const HeaderComponent = () => (
         <WidthContainer>
             <div className={styles['header__container']}>
                 <div className={styles['header__inner_left']}>
-                    <a href="#">
-                        <img src={headerLogo} alt="" />
+                    <a href="/">
+                        <img src={headerLogo} alt="logo" />
                     </a>
                     <ThemeSwitcher />
                 </div>
@@ -23,10 +23,10 @@ export const HeaderComponent = () => (
                     <nav>
                         <ul className={styles['header__nav-list']}>
                             <li className={`${styles['header__nav-item']} ${styles['header__nav-item_active']}`}>
-                                <a href="#">About</a>
+                                <a href="/about">About</a>
                             </li>
                             <li className={styles['header__nav-item']}>
-                                <a href="#">Products</a>
+                                <a href="/products">Products</a>
                             </li>
                         </ul>
                     </nav>

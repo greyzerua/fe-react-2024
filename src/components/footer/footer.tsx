@@ -13,18 +13,18 @@ export const Footer = () => (
                 <div className={styles['footer__social-media']}>
                     <ul>
                         <li>
-                            <a href="#">
-                                <img src={facebook} />
+                            <a href="https://www.facebook.com/master.of.code.team/">
+                                <img src={facebook} alt="" />
                             </a>
                         </li>
                         <li>
-                            <a href="#">
-                                <img src={linkedin} />
+                            <a href="https://www.linkedin.com/company/master-of-code/">
+                                <img src={linkedin} alt="" />
                             </a>
                         </li>
                         <li>
-                            <a href="https://www.instagram.com/serhiishev/" target="blank">
-                                <img src={instagram} />
+                            <a href="https://www.instagram.com/master.of.code.team/" target="blank">
+                                <img src={instagram} alt="" />
                             </a>
                         </li>
                     </ul>

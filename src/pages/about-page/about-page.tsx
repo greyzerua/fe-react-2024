@@ -39,7 +39,7 @@ export const AboutPage = () => (
                     </p>
                 </div>
                 <div className={styles['about__inner-image']}>
-                    <img src={aboutImage} />
+                    <img src={aboutImage} alt="" />
                 </div>
             </div>
         </WidthContainer>

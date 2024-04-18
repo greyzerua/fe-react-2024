@@ -6,11 +6,11 @@ import styles from './theme-switcher.module.css';
 export const ThemeSwitcher = () => (
     <div className={styles['theme-switcher']}>
         <button className={styles['theme-switcher__button']}>
-            <img src={sun} />
+            <img src={sun} alt="" />
         </button>
         <div className={styles['theme-switcher__separator']}></div>
         <button className={styles['theme-switcher__button']}>
-            <img src={moon} />
+            <img src={moon} alt="" />
         </button>
     </div>
 );
