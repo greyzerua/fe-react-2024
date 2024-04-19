@@ -37,6 +37,11 @@
   }
 
   .footer__inner p {
-    font-size: 17px;
+    font-size: 1rem;
+  }
+
+  .footer__social-media a {
+    width: 25px;
+    height: 25px;
   }
 }

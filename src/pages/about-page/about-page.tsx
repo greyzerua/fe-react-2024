@@ -8,9 +8,9 @@ import styles from './about-page.module.css';
 export const AboutPage = () => (
     <section className={styles.about}>
         <WidthContainer>
-            <Title />
             <div className={styles['about__inner']}>
                 <div className={styles['about__inner-text']}>
+                    <Title />
                     <p>
                         Hi! My name is Serhii and I&apos;m a Junior Frontend Developer. I am already familiar with main Web Technologies
                         like React, HTML, CSS, JavaScript and Git version control system.
