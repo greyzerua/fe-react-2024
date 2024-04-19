@@ -51,6 +51,28 @@ button {
   background-color: transparent;
 }
 
+.bold-hover {
+  position: relative;
+  transition: .2s ease all;
+}
+
+.bold-hover::before {
+  content: attr(data-hover);
+  font-weight: 700;
+  visibility: hidden;
+}
+
+.bold-hover > span {
+  left: 0;
+  right: 0;
+  top: 0;
+  position: absolute;
+}
+
+.bold-hover:hover {
+  font-weight: 700;
+}
+
 @media (prefers-color-scheme: light) {
 
   :root {

@@ -23,10 +23,14 @@ export const HeaderComponent = () => (
                     <nav>
                         <ul className={styles['header__nav-list']}>
                             <li className={`${styles['header__nav-item']} ${styles['header__nav-item_active']}`}>
-                                <a href="/about">About</a>
+                                <a href="/about" className="bold-hover" data-hover="About">
+                                    <span>About</span>
+                                </a>
                             </li>
                             <li className={styles['header__nav-item']}>
-                                <a href="/products">Products</a>
+                                <a href="/products" className="bold-hover" data-hover="Products">
+                                    <span>Products</span>
+                                </a>
                             </li>
                         </ul>
                     </nav>

@@ -26,29 +26,6 @@
   margin-right: 115px;
 }
 
-.header__nav-item a {
-  position: relative;
-  transition: .3s ease all;
-}
-
-.header__nav-item a::after {
-  content: "";
-  border-top: 1px solid #FFF;
-  width: 100%;
-  position: absolute;
-  display: block;
-  transform: rotateY(90deg);
-  transition: transform .3s;
-}
-
-.header__nav-item a:hover::after {
-  transform: rotateY(0deg);
-}
-
-.header__nav-item_active a {
-  font-weight: 700;
-}
-
 .header__basket {
   will-change: contents;
   margin-right: 40px;

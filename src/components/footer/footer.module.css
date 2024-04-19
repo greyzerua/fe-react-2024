@@ -10,10 +10,9 @@
 }
 
 .footer__inner a {
-  font-weight: 400;
-  color: #FC613A;
+  color: #EF4934;
+  text-align: center;
   transition: .2s all;
-  will-change: contents;
 }
 
 .footer__social-media a {

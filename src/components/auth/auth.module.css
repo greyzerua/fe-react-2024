@@ -20,13 +20,13 @@
 }
 
 .auth-buttons__button_login:hover {
-  background-color: #A83E3E;
+  background-color: #585858;
 }
 
 .auth-buttons__button_sign-up {
-  background-color: #EA4242;
+  background-color: #EF4934;
 }
 
 .auth-buttons__button_sign-up:hover {
-  background-color: #B91313;
+  background-color: #D43824;
 }

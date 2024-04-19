@@ -13,7 +13,7 @@ export const Footer = () => (
                 <div className={styles['footer__social-media']}>
                     <ul>
                         <li>
-                            <a href="https://www.facebook.com/master.of.code.team/">
+                            <a href="https://www.facebook.com/master.of.code.team/" className={styles['footer__social-media__link']}>
                                 <img src={facebook} alt="" />
                             </a>
                         </li>
@@ -31,8 +31,13 @@ export const Footer = () => (
                 </div>
                 <p>
                     Made with 💗 on course&nbsp;
-                    <a href="https://www.mastersacademy.education/frontend-react-it" target="blank">
-                        &apos;Intro to React&apos; from Masters Academy in 2024
+                    <a
+                        href="https://www.mastersacademy.education/frontend-react-it"
+                        target="blank"
+                        className="bold-hover"
+                        data-hover="'Intro to React' from Masters Academy in 2024"
+                    >
+                        <span>&apos;Intro to React&apos; from Masters Academy in 2024</span>
                     </a>
                     &nbsp; by Serhii Shevchenko
                 </p>
