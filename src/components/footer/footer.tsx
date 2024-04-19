@@ -31,12 +31,7 @@ export const Footer = () => (
                 </div>
                 <p>
                     Made with 💗 on course&nbsp;
-                    <a
-                        href="https://www.mastersacademy.education/frontend-react-it"
-                        target="blank"
-                        className="bold-hover"
-                        data-hover="'Intro to React' from Masters Academy in 2024"
-                    >
+                    <a href="https://www.mastersacademy.education/frontend-react-it" target="blank">
                         <span>&apos;Intro to React&apos; from Masters Academy in 2024</span>
                     </a>
                     &nbsp; by Serhii Shevchenko
