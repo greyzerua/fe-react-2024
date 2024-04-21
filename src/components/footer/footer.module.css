@@ -3,29 +3,32 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 40px 0 30px;
+  padding: 40px 0;
   border-top: 1px solid #CCC;
   gap: 30px;
   text-align: center;
 }
 
-.footer__inner a {
+.footer__inner__link {
   color: #EF4934;
   text-align: center;
   transition: .2s all;
 }
 
-.footer__social-media a {
+.footer__social-media__link {
+  width: 35px;
+  height: 35px;
+  transition: .2s all;
   display: flex;
 }
 
-.footer__inner a:hover {
+.footer__social-media__link:hover {
   transform: scale(1.1);
 }
 
-.footer__social-media ul {
+.footer__social-media__list {
   display: flex;
-  gap: 25px;
+  gap: 30px;
 }
 
 @media (max-width: 900px) {
@@ -35,11 +38,11 @@
     gap: 10px;
   }
 
-  .footer__inner p {
+  .footer__desc {
     font-size: 1rem;
   }
 
-  .footer__social-media a {
+  .footer__social-media__link {
     width: 25px;
     height: 25px;
   }

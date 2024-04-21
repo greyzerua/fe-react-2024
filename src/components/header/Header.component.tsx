@@ -13,7 +13,7 @@ export const HeaderComponent = () => (
         <WidthContainer>
             <div className={styles['header__container']}>
                 <div className={styles['header__inner_left']}>
-                    <a href="/">
+                    <a href="/" className={styles['header__logo']}>
                         <img src={headerLogo} alt="logo" />
                     </a>
                     <ThemeSwitcher />
@@ -22,7 +22,7 @@ export const HeaderComponent = () => (
                 <div className={styles['header__inner_right']}>
                     <nav>
                         <ul className={styles['header__nav-list']}>
-                            <li className={`${styles['header__nav-item']} ${styles['header__nav-item_active']}`}>
+                            <li className={styles['header__nav-item']}>
                                 <a href="/about" className="bold-hover" data-hover="About">
                                     <span>About</span>
                                 </a>
