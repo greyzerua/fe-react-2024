@@ -4,6 +4,5 @@ export const Burger = () => (
     <div className={styles.burger}>
         <span></span>
         <span></span>
-        <span></span>
     </div>
 );

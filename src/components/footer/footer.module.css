@@ -12,18 +12,11 @@
 .footer__inner__link {
   color: #EF4934;
   text-align: center;
-  transition: .2s all;
+  transition: .3s all;
 }
 
-.footer__social-media__link {
-  width: 35px;
-  height: 35px;
-  transition: .2s all;
-  display: flex;
-}
-
-.footer__social-media__link:hover {
-  transform: scale(1.1);
+.footer__inner__link:hover {
+  font-weight: 700;
 }
 
 .footer__social-media__list {
@@ -34,16 +27,15 @@
 @media (max-width: 900px) {
 
   .footer__inner {
-    padding: 23px 0 20px;
-    gap: 10px;
+    padding: 30px 0;
+    gap: 30px;
   }
 
   .footer__desc {
     font-size: 1rem;
   }
 
-  .footer__social-media__link {
-    width: 25px;
-    height: 25px;
+  .footer__social-media__list {
+    gap: 25px;
   }
 }

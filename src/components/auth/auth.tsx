@@ -1,17 +1,17 @@
-import login from '@/assets/Login.svg';
-import signUp from '@/assets/user.svg';
+import { Icon, IconType } from '../icons';
+import { Link } from '../link';
 
 import styles from './auth.module.css';
 
 export const Auth = () => (
     <div className={styles['auth-buttons']}>
-        <a href="/login" className={`${styles['auth-buttons__button']} ${styles['auth-buttons__button_login']}`}>
-            <img src={login} alt="" />
+        <Link href="/login" className={`${styles['auth-buttons__button']} ${styles['auth-buttons__button_login']}`}>
+            <Icon iconType={IconType.LOGIN} />
             Login
-        </a>
-        <a href="/sign-up" className={`${styles['auth-buttons__button']} ${styles['auth-buttons__button_sign-up']}`}>
-            <img src={signUp} alt="" />
+        </Link>
+        <Link href="/sign-up" className={`${styles['auth-buttons__button']} ${styles['auth-buttons__button_sign-up']}`}>
+            <Icon iconType={IconType.USER} />
             Sign up
-        </a>
+        </Link>
     </div>
 );

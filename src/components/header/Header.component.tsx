@@ -3,6 +3,7 @@ import headerLogo from '@/assets/logo.svg';
 import { Auth } from '../auth';
 import { Basket } from '../basket';
 import { Burger } from '../burger';
+import { Link } from '../link';
 import { ThemeSwitcher } from '../theme-switcher';
 import { WidthContainer } from '../width-container';
 
@@ -13,9 +14,9 @@ export const HeaderComponent = () => (
         <WidthContainer>
             <div className={styles['header__container']}>
                 <div className={styles['header__inner_left']}>
-                    <a href="/" className={styles['header__logo']}>
+                    <Link href="/" className={styles['header__logo']}>
                         <img src={headerLogo} alt="logo" />
-                    </a>
+                    </Link>
                     <ThemeSwitcher />
                 </div>
 
@@ -23,24 +24,26 @@ export const HeaderComponent = () => (
                     <nav>
                         <ul className={styles['header__nav-list']}>
                             <li className={styles['header__nav-item']}>
-                                <a href="/about" className="bold-hover" data-hover="About">
+                                <Link href="/about" className="bold-hover" dataHover="About">
                                     <span>About</span>
-                                </a>
+                                </Link>
                             </li>
                             <li className={styles['header__nav-item']}>
-                                <a href="/products" className="bold-hover" data-hover="Products">
+                                <Link href="/products" className="bold-hover" dataHover="Products">
                                     <span>Products</span>
-                                </a>
+                                </Link>
                             </li>
                         </ul>
                     </nav>
                     <div className={styles['header__basket']}>
                         <Basket />
                     </div>
-                    <Auth />
-                </div>
-                <div className={styles['header__burger']}>
-                    <Burger />
+                    <div className={styles['header__burger']}>
+                        <Burger />
+                    </div>
+                    <div className={styles['header__auth']}>
+                        <Auth />
+                    </div>
                 </div>
             </div>
         </WidthContainer>

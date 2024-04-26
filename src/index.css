@@ -25,12 +25,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-a {
-  font-weight: 500;
-  color: #FFF;
-  text-decoration: inherit;
-}
-
 p {
   color: #111;
   margin: 0;

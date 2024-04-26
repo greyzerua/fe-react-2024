@@ -1,9 +1,10 @@
-import basket from '@/assets/cart.svg';
+import { Icon, IconType } from '../icons';
+import { Link } from '../link';
 
 import styles from './basket.module.css';
 
 export const Basket = () => (
-    <a href="/basket" className={styles['basket']}>
-        <img src={basket} alt="" />
-    </a>
+    <Link href="/basket" className={styles['basket']}>
+        <Icon iconType={IconType.BASKET} />
+    </Link>
 );

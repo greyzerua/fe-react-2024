@@ -1,4 +1,5 @@
+import type { ComponentProps } from 'react';
+
 import styles from './width-container.module.css';
 
-// @ts-ignore
-export const WidthContainer = ({ children }) => <div className={styles['width-container']}>{children}</div>;
+export const WidthContainer = ({ children }: ComponentProps<'div'>) => <div className={styles['width-container']}>{children}</div>;
