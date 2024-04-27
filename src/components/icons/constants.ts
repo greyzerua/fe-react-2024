@@ -7,7 +7,7 @@ import { MoonIcon } from './moon-icon';
 import { SunIcon } from './sun-icon';
 import { UserIcon } from './user-icon';
 
-export enum IconType {
+export enum EIconType {
     FB,
     INSTAGRAM,
     LINKEDIN,
@@ -19,12 +19,16 @@ export enum IconType {
 }
 
 export const Icons = {
-    [IconType.FB]: FacebookIcon,
-    [IconType.INSTAGRAM]: InstagramIcon,
-    [IconType.LINKEDIN]: LinkedinIcon,
-    [IconType.BASKET]: BasketIcon,
-    [IconType.SUN]: SunIcon,
-    [IconType.MOON]: MoonIcon,
-    [IconType.LOGIN]: LoginIcon,
-    [IconType.USER]: UserIcon,
+    [EIconType.FB]: FacebookIcon,
+    [EIconType.INSTAGRAM]: InstagramIcon,
+    [EIconType.LINKEDIN]: LinkedinIcon,
+    [EIconType.BASKET]: BasketIcon,
+    [EIconType.SUN]: SunIcon,
+    [EIconType.MOON]: MoonIcon,
+    [EIconType.LOGIN]: LoginIcon,
+    [EIconType.USER]: UserIcon,
+};
+
+export const ICON_COLORS = {
+    DEFAULT: 'var(--primaryWhite)',
 };

@@ -16,17 +16,17 @@
 }
 
 .auth-buttons__button_login {
-  background-color: #333;
+  background-color: var(--primaryButtonColor);
 }
 
 .auth-buttons__button_login:hover {
-  background-color: #585858;
+  background-color: var(--primaryButtonHoverColor);
 }
 
 .auth-buttons__button_sign-up {
-  background-color: #EF4934;
+  background-color: var(--secondaryButtonColor);
 }
 
 .auth-buttons__button_sign-up:hover {
-  background-color: #D43824;
+  background-color: var(--secondaryButtonHoverColor);
 }

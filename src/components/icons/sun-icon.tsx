@@ -1,6 +1,8 @@
 import type { ComponentProps } from 'react';
 
-export const SunIcon = ({ stroke = '#FFF' }: ComponentProps<'svg'>) => (
+import { ICON_COLORS } from './constants';
+
+export const SunIcon = ({ stroke = ICON_COLORS.DEFAULT }: ComponentProps<'svg'>) => (
     <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
         <g clipPath="url(#clip0_315_1481)">
             <path

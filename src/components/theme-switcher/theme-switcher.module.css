@@ -16,21 +16,21 @@
 
 .theme-switcher__button path {
   transition: .3s all;
-  stroke: #656565;
+  stroke: var(--primaryGrey);
 }
 
 .theme-switcher__button_active path {
-  stroke: #FFF;
+  stroke: var(--primaryWhite);
 }
 
 .theme-switcher__button:hover path {
-  stroke: #FFF;
+  stroke: var(--primaryWhite);
 }
 
 .theme-switcher__separator {
   width: 1px;
   height: 20px;
-  background-color: #656565;
+  background-color: var(--primaryGrey);
 }
 
 @media (max-width: 800px) {

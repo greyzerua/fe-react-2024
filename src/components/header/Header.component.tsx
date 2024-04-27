@@ -1,5 +1,6 @@
 import headerLogo from '@/assets/logo.svg';
 
+import { APP_LINK_URLS } from '../../link-urls';
 import { Auth } from '../auth';
 import { Basket } from '../basket';
 import { Burger } from '../burger';
@@ -14,7 +15,7 @@ export const HeaderComponent = () => (
         <WidthContainer>
             <div className={styles['header__container']}>
                 <div className={styles['header__inner_left']}>
-                    <Link href="/" className={styles['header__logo']}>
+                    <Link href={APP_LINK_URLS.ROOT} className={styles['header__logo']}>
                         <img src={headerLogo} alt="logo" />
                     </Link>
                     <ThemeSwitcher />
@@ -24,12 +25,12 @@ export const HeaderComponent = () => (
                     <nav>
                         <ul className={styles['header__nav-list']}>
                             <li className={styles['header__nav-item']}>
-                                <Link href="/about" className="bold-hover" dataHover="About">
+                                <Link href={APP_LINK_URLS.ABOUT} className="bold-hover" dataHover="About">
                                     <span>About</span>
                                 </Link>
                             </li>
                             <li className={styles['header__nav-item']}>
-                                <Link href="/products" className="bold-hover" dataHover="Products">
+                                <Link href={APP_LINK_URLS.PRODUCTS} className="bold-hover" dataHover="Products">
                                     <span>Products</span>
                                 </Link>
                             </li>

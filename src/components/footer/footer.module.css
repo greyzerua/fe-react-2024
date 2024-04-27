@@ -10,7 +10,7 @@
 }
 
 .footer__inner__link {
-  color: #EF4934;
+  color: var(--secondaryButtonColor);
   text-align: center;
   transition: .3s all;
 }

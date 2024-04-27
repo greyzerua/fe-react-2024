@@ -23,6 +23,12 @@ body {
   text-rendering: optimizelegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  --primaryWhite: #FFF;
+  --primaryGrey: #656565;
+  --primaryButtonColor: #333;
+  --primaryButtonHoverColor: #585858;
+  --secondaryButtonColor: #EF4934;
+  --secondaryButtonHoverColor: #D43824;
 }
 
 p {
@@ -71,7 +77,7 @@ button {
 @media (prefers-color-scheme: light) {
 
   :root {
-    background-color: #FFF;
+    background-color: var(--primaryWhite);
   }
 }
 

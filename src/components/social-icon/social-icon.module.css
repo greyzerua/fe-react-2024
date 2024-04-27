@@ -10,7 +10,7 @@
 }
 
 .social-icon:hover svg path {
-  fill: #D43824;
+  fill: var(--secondaryButtonHoverColor);
 }
 
 @media (max-width: 900px) {

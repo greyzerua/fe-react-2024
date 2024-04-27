@@ -1,13 +1,13 @@
 import type { ComponentProps } from 'react';
 
-import type { IconType } from '../icons';
+import type { EIconType } from '../icons';
 import { Icon } from '../icons';
 import { Link } from '../link';
 
 import styles from './social-icon.module.css';
 
 type Props = ComponentProps<'a'> & {
-    iconType: IconType;
+    iconType: EIconType;
 };
 
 export const SocialIcon = ({ href, iconType, className = '' }: Props) => (
