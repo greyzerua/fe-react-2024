@@ -10,7 +10,7 @@ export const Auth = () => (
             <Icon iconType={EIconType.LOGIN} />
             Login
         </Link>
-        <Link href={APP_LINK_URLS.SIGN_UP} className={`${styles['auth-buttons__button']} ${styles['auth-buttons__button_sign-up']}`}>
+        <Link href={APP_LINK_URLS.SIGNUP} className={`${styles['auth-buttons__button']} ${styles['auth-buttons__button_sign-up']}`}>
             <Icon iconType={EIconType.USER} />
             Sign up
         </Link>

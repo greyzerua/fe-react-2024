@@ -5,7 +5,7 @@ import { Link } from '../link';
 import styles from './basket.module.css';
 
 export const Basket = () => (
-    <Link href={APP_LINK_URLS.SIGN_UP} className={styles['basket']}>
+    <Link href={APP_LINK_URLS.BASKET} className={styles['basket']}>
         <Icon iconType={EIconType.BASKET} />
     </Link>
 );
