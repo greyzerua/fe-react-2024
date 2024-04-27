@@ -24,13 +24,17 @@ export const HeaderComponent = () => (
                 <div className={styles['header__inner_right']}>
                     <nav>
                         <ul className={styles['header__nav-list']}>
-                            <li className={styles['header__nav-item']}>
-                                <Link href={APP_LINK_URLS.ABOUT} className="bold-hover" dataHover="About">
+                            <li className={`${styles['header__nav-item_active']}`}>
+                                <Link href={APP_LINK_URLS.ABOUT} className={`${styles['header__nav-link']} bold-hover`} dataHover="About">
                                     <span>About</span>
                                 </Link>
                             </li>
-                            <li className={styles['header__nav-item']}>
-                                <Link href={APP_LINK_URLS.PRODUCTS} className="bold-hover" dataHover="Products">
+                            <li>
+                                <Link
+                                    href={APP_LINK_URLS.PRODUCTS}
+                                    className={`${styles['header__nav-link']} bold-hover`}
+                                    dataHover="Products"
+                                >
                                     <span>Products</span>
                                 </Link>
                             </li>

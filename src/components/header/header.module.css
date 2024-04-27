@@ -30,6 +30,10 @@
   margin-right: 115px;
 }
 
+.header__nav-item_active .header__nav-link {
+  font-weight: 700;
+}
+
 .header__basket {
   will-change: contents;
   margin-right: 40px;
