@@ -1,7 +1,9 @@
 import aboutImage from '@/assets/about-image.png';
 
+import { Link } from '../../components/link';
 import { Title } from '../../components/title';
 import { WidthContainer } from '../../components/width-container';
+import { EXTERNAL_LINK_URLS } from '../../link-urls';
 
 import styles from './about-page.module.css';
 
@@ -22,9 +24,9 @@ export const AboutPage = () => (
                     </p>
                     <p className={paragraphClassName}>
                         This page was developed during the course &apos;
-                        <a href="https://www.mastersacademy.education/frontend-react-it" target="blank" className={linkClassName}>
+                        <Link href={EXTERNAL_LINK_URLS.COURSE} className={linkClassName}>
                             Intro to React
-                        </a>
+                        </Link>
                         &apos; from Masters Academy in 2024.
                     </p>
                     <p className={paragraphClassName}>
@@ -33,13 +35,13 @@ export const AboutPage = () => (
                     </p>
                     <p className={paragraphClassName}>
                         You can contact me via&nbsp;
-                        <a href="https://t.me/greyzerua" target="blank" className={linkClassName}>
+                        <Link href={EXTERNAL_LINK_URLS.TELEGRAM} className={linkClassName}>
                             telegram
-                        </a>
+                        </Link>
                         &nbsp;and check out my&nbsp;
-                        <a href="https://github.com/greyzerua" target="blank" className={linkClassName}>
+                        <Link href={EXTERNAL_LINK_URLS.GITHUB} className={linkClassName}>
                             GitHub
-                        </a>
+                        </Link>
                         .
                     </p>
                 </div>

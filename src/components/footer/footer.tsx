@@ -1,12 +1,10 @@
-import facebook from '@/assets/fb.svg';
-import instagram from '@/assets/instagram.svg';
-import linkedin from '@/assets/linkedin.svg';
-
+import { EXTERNAL_LINK_URLS } from '../../link-urls';
+import { EIconType } from '../icons';
+import { Link } from '../link';
+import { SocialIcon } from '../social-icon';
 import { WidthContainer } from '../width-container';
 
 import styles from './footer.module.css';
-
-const socialLinkClassName = styles['footer__social-media__link'];
 
 export const Footer = () => (
     <footer>
@@ -15,31 +13,21 @@ export const Footer = () => (
                 <div className={styles['footer__social-media']}>
                     <ul className={styles['footer__social-media__list']}>
                         <li>
-                            <a href="https://www.facebook.com/master.of.code.team/" className={socialLinkClassName}>
-                                <img src={facebook} alt="" />
-                            </a>
+                            <SocialIcon href={EXTERNAL_LINK_URLS.FB} iconType={EIconType.FB} />
                         </li>
                         <li>
-                            <a href="https://www.linkedin.com/company/master-of-code/" className={socialLinkClassName}>
-                                <img src={linkedin} alt="" />
-                            </a>
+                            <SocialIcon href={EXTERNAL_LINK_URLS.INSTAGRAM} iconType={EIconType.INSTAGRAM} />
                         </li>
                         <li>
-                            <a href="https://www.instagram.com/master.of.code.team/" target="blank" className={socialLinkClassName}>
-                                <img src={instagram} alt="" />
-                            </a>
+                            <SocialIcon href={EXTERNAL_LINK_URLS.LINKEDIN} iconType={EIconType.LINKEDIN} />
                         </li>
                     </ul>
                 </div>
                 <p className={styles['footer__desc']}>
                     Made with 💗 on course&nbsp;
-                    <a
-                        href="https://www.mastersacademy.education/frontend-react-it"
-                        target="blank"
-                        className={styles['footer__inner__link']}
-                    >
+                    <Link href={EXTERNAL_LINK_URLS.COURSE} className={styles['footer__inner__link']}>
                         <span>&apos;Intro to React&apos; from Masters Academy in 2024</span>
-                    </a>
+                    </Link>
                     &nbsp; by Serhii Shevchenko
                 </p>
             </div>

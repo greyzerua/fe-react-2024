@@ -1,0 +1,22 @@
+.social-icon {
+  width: 35px;
+  height: 35px;
+  transition: .2s all;
+  display: flex;
+}
+
+.social-icon svg path {
+  transition: .2s all ease-in;
+}
+
+.social-icon:hover svg path {
+  fill: var(--secondaryButtonHoverColor);
+}
+
+@media (max-width: 900px) {
+
+  .social-icon {
+    width: 25px;
+    height: 25px;
+  }
+}

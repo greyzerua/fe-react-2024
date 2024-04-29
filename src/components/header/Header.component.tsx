@@ -1,8 +1,10 @@
 import headerLogo from '@/assets/logo.svg';
 
+import { APP_LINK_URLS } from '../../link-urls';
 import { Auth } from '../auth';
 import { Basket } from '../basket';
 import { Burger } from '../burger';
+import { Link } from '../link';
 import { ThemeSwitcher } from '../theme-switcher';
 import { WidthContainer } from '../width-container';
 
@@ -13,34 +15,40 @@ export const HeaderComponent = () => (
         <WidthContainer>
             <div className={styles['header__container']}>
                 <div className={styles['header__inner_left']}>
-                    <a href="/" className={styles['header__logo']}>
+                    <Link href={APP_LINK_URLS.ROOT} className={styles['header__logo']}>
                         <img src={headerLogo} alt="logo" />
-                    </a>
+                    </Link>
                     <ThemeSwitcher />
                 </div>
 
                 <div className={styles['header__inner_right']}>
                     <nav>
                         <ul className={styles['header__nav-list']}>
-                            <li className={styles['header__nav-item']}>
-                                <a href="/about" className="bold-hover" data-hover="About">
+                            <li className={`${styles['header__nav-item_active']}`}>
+                                <Link href={APP_LINK_URLS.ABOUT} className={`${styles['header__nav-link']} bold-hover`} dataHover="About">
                                     <span>About</span>
-                                </a>
+                                </Link>
                             </li>
-                            <li className={styles['header__nav-item']}>
-                                <a href="/products" className="bold-hover" data-hover="Products">
+                            <li>
+                                <Link
+                                    href={APP_LINK_URLS.PRODUCTS}
+                                    className={`${styles['header__nav-link']} bold-hover`}
+                                    dataHover="Products"
+                                >
                                     <span>Products</span>
-                                </a>
+                                </Link>
                             </li>
                         </ul>
                     </nav>
                     <div className={styles['header__basket']}>
                         <Basket />
                     </div>
-                    <Auth />
-                </div>
-                <div className={styles['header__burger']}>
-                    <Burger />
+                    <div className={styles['header__burger']}>
+                        <Burger />
+                    </div>
+                    <div className={styles['header__auth']}>
+                        <Auth />
+                    </div>
                 </div>
             </div>
         </WidthContainer>
