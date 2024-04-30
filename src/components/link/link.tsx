@@ -6,8 +6,8 @@ type Props = ComponentProps<'a'> & {
     dataHover?: string;
 };
 
-export const Link = ({ className = '', href, target = '_blank', children, dataHover }: Props) => (
-    <a href={href} className={`${styles.link} ${className}`} target={target} data-hover={dataHover}>
+export const Link = ({ className = '', target, children, dataHover, ...restProps }: Props) => (
+    <a className={`${styles.link} ${className}`} target={target} data-hover={dataHover} {...restProps}>
         {children}
     </a>
 );

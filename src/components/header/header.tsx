@@ -1,42 +1,55 @@
 import headerLogo from '@/assets/logo.svg';
 
-import { APP_LINK_URLS } from '../../link-urls';
+import { EAppPage } from '../../link-urls';
+import { AppLink } from '../app-link';
 import { Auth } from '../auth';
 import { Basket } from '../basket';
 import { Burger } from '../burger';
-import { Link } from '../link';
 import { ThemeSwitcher } from '../theme-switcher';
 import { WidthContainer } from '../width-container';
 
 import styles from './header.module.css';
 
-export const HeaderComponent = () => (
+interface Props {
+    onPageChange: (page: EAppPage) => void;
+    currentPage: EAppPage;
+}
+
+export const HeaderComponent = ({ onPageChange, currentPage }: Props) => (
     <header className={styles.header}>
         <WidthContainer>
             <div className={styles['header__container']}>
                 <div className={styles['header__inner_left']}>
-                    <Link href={APP_LINK_URLS.ROOT} className={styles['header__logo']}>
+                    <AppLink onPageChange={onPageChange} currentPage={currentPage} page={EAppPage.ROOT} className={styles['header__logo']}>
                         <img src={headerLogo} alt="logo" />
-                    </Link>
+                    </AppLink>
                     <ThemeSwitcher />
                 </div>
 
                 <div className={styles['header__inner_right']}>
                     <nav>
                         <ul className={styles['header__nav-list']}>
-                            <li className={`${styles['header__nav-item_active']}`}>
-                                <Link href={APP_LINK_URLS.ABOUT} className={`${styles['header__nav-link']} bold-hover`} dataHover="About">
+                            <li>
+                                <AppLink
+                                    onPageChange={onPageChange}
+                                    currentPage={currentPage}
+                                    page={EAppPage.ABOUT}
+                                    className={styles['header__nav-link']}
+                                    dataHover="About"
+                                >
                                     <span>About</span>
-                                </Link>
+                                </AppLink>
                             </li>
                             <li>
-                                <Link
-                                    href={APP_LINK_URLS.PRODUCTS}
-                                    className={`${styles['header__nav-link']} bold-hover`}
+                                <AppLink
+                                    onPageChange={onPageChange}
+                                    currentPage={currentPage}
+                                    page={EAppPage.PRODUCTS}
+                                    className={styles['header__nav-link']}
                                     dataHover="Products"
                                 >
                                     <span>Products</span>
-                                </Link>
+                                </AppLink>
                             </li>
                         </ul>
                     </nav>
@@ -47,7 +60,7 @@ export const HeaderComponent = () => (
                         <Burger />
                     </div>
                     <div className={styles['header__auth']}>
-                        <Auth />
+                        <Auth currentPage={currentPage} onPageChange={onPageChange} />
                     </div>
                 </div>
             </div>

@@ -1,11 +1,16 @@
-import { APP_LINK_URLS } from '../../link-urls';
+import { EAppPage } from '../../link-urls';
+import { AppLink } from '../app-link';
 import { EIconType, Icon } from '../icons';
-import { Link } from '../link';
 
 import styles from './basket.module.css';
 
-export const Basket = () => (
-    <Link href={APP_LINK_URLS.BASKET} className={styles['basket']}>
+interface Props {
+    onPageChange: (page: EAppPage) => void;
+    currentPage: EAppPage;
+}
+
+export const Basket = ({ currentPage, onPageChange }: Props) => (
+    <AppLink onPageChange={onPageChange} currentPage={currentPage} page={EAppPage.BASKET} className={styles['basket']}>
         <Icon iconType={EIconType.BASKET} />
-    </Link>
+    </AppLink>
 );
