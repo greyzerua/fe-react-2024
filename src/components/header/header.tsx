@@ -54,7 +54,7 @@ export const HeaderComponent = ({ onPageChange, currentPage }: Props) => (
                         </ul>
                     </nav>
                     <div className={styles['header__basket']}>
-                        <Basket />
+                        <Basket currentPage={currentPage} onPageChange={onPageChange} />
                     </div>
                     <div className={styles['header__burger']}>
                         <Burger />

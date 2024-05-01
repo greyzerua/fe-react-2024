@@ -31,4 +31,5 @@ export const Icons = {
 
 export const ICON_COLORS = {
     DEFAULT: 'var(--primaryWhite)',
+    BLACK: 'var(--blackButtonColor)',
 };
