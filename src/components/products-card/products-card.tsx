@@ -1,4 +1,6 @@
-import type { Product } from '../..//interfaces/product';
+import type { Product } from '../../interfaces/product';
+import type { SelectedProduct } from '../../interfaces/selected-product';
+import type { AddSelectedProduct } from '../../types/selected-products';
 import { EIconType, Icon } from '../icons';
 import { ICON_COLORS } from '../icons/constants';
 
@@ -6,10 +8,16 @@ import styles from './products-card.module.css';
 
 interface Props {
     product: Product;
+    addSelectedProduct: AddSelectedProduct;
+    selectedProduct: SelectedProduct;
 }
 
-export const ProductsCard = ({ product }: Props) => {
-    const { images, title, price } = product;
+export const ProductsCard = ({ product, addSelectedProduct, selectedProduct }: Props) => {
+    const { images, title, price, id } = product;
+
+    const addToCard = () => {
+        addSelectedProduct(id);
+    };
 
     return (
         <div className={styles['products__card']}>
@@ -22,8 +30,9 @@ export const ProductsCard = ({ product }: Props) => {
                     {price}
                     <span className={styles['products__card__info-currency']}>₴</span>
                 </p>
-                <button className={styles['products__card__info-btn']}>
+                <button className={styles['products__card__add-btn']} onClick={addToCard}>
                     <Icon iconType={EIconType.BASKET} stroke={ICON_COLORS.BLACK} />
+                    {selectedProduct?.count && <span className={styles['products__card__count']}>{selectedProduct?.count}</span>}
                 </button>
             </div>
         </div>

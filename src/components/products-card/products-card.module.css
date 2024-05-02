@@ -42,13 +42,32 @@
   font-size: .87rem;
 }
 
-.products__card__info-btn {
+.products__card__add-btn {
+  position: relative;
   will-change: contents;
   transition: .2s all;
 }
 
-.products__card__info-btn:hover {
+.products__card__add-btn:hover {
   transform: rotate(-7deg);
+}
+
+.products__card__count {
+  display: flex;
+  box-sizing: border-box;
+  font-size: 10px;
+  padding: 2px 3px;
+  position: absolute;
+  top: -3px;
+  right: -5px;
+  line-height: 1;
+  font-weight: 700;
+  border-radius: 50%;
+  width: 16px;
+  height: 17px;
+  background-color: var(--secondaryButtonColor);
+  justify-content: center;
+  align-items: center;
 }
 
 @media (max-width: 580px) {

@@ -37,7 +37,7 @@
 .header__basket {
   will-change: contents;
   margin-right: 40px;
-  transition: .3s all;
+  transition: .2s all;
 }
 
 .header__basket:hover {

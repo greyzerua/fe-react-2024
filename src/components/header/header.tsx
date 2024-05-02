@@ -1,6 +1,7 @@
 import headerLogo from '@/assets/logo.svg';
 
 import { EAppPage } from '../../link-urls';
+import type { SelectedProducts } from '../../types/selected-products';
 import { AppLink } from '../app-link';
 import { Auth } from '../auth';
 import { Basket } from '../basket';
@@ -13,9 +14,10 @@ import styles from './header.module.css';
 interface Props {
     onPageChange: (page: EAppPage) => void;
     currentPage: EAppPage;
+    selectedProducts: SelectedProducts;
 }
 
-export const HeaderComponent = ({ onPageChange, currentPage }: Props) => (
+export const HeaderComponent = ({ onPageChange, currentPage, selectedProducts }: Props) => (
     <header className={styles.header}>
         <WidthContainer>
             <div className={styles['header__container']}>
@@ -54,7 +56,7 @@ export const HeaderComponent = ({ onPageChange, currentPage }: Props) => (
                         </ul>
                     </nav>
                     <div className={styles['header__basket']}>
-                        <Basket currentPage={currentPage} onPageChange={onPageChange} />
+                        <Basket currentPage={currentPage} onPageChange={onPageChange} selectedProducts={selectedProducts} />
                     </div>
                     <div className={styles['header__burger']}>
                         <Burger />
