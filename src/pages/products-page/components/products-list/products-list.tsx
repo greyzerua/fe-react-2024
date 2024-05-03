@@ -1,6 +1,7 @@
-import type { Product } from '../../interfaces/product';
-import type { AddSelectedProduct, SelectedProducts } from '../../types/selected-products';
-import { ProductsCard } from '../products-card';
+import type { Product } from '@/interfaces/product';
+import type { AddSelectedProduct, SelectedProducts } from '@/types/selected-products';
+
+import { ProductsCard } from '../products-card/products-card';
 
 import styles from './products-list.module.css';
 

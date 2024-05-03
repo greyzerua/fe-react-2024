@@ -16,14 +16,12 @@ type Props = ComponentProps<'a'> & {
 export const AppLink = ({ className = '', onPageChange, page, currentPage, children, dataHover, ...restProps }: Props) => {
     const href = APP_LINK_URLS[page];
 
-    const isActive = page === currentPage;
-
     const onClick = (event: MouseEvent<HTMLAnchorElement>) => {
         event.preventDefault();
         onPageChange(page);
     };
 
-    const classNames = `${styles['app-link']} ${className} ${dataHover ? 'bold-hover' : ''}  ${isActive ? styles['app-link_active'] : ''}`;
+    const classNames = `${styles['app-link']} ${className} ${dataHover ? 'bold-hover' : ''}  ${page === currentPage ? styles['app-link_active'] : ''}`;
 
     return (
         <Link href={href} className={classNames} data-hover={dataHover} onClick={onClick} {...restProps}>

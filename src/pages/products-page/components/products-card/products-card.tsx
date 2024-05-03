@@ -1,8 +1,8 @@
-import type { Product } from '../../interfaces/product';
-import type { SelectedProduct } from '../../interfaces/selected-product';
-import type { AddSelectedProduct } from '../../types/selected-products';
-import { EIconType, Icon } from '../icons';
-import { ICON_COLORS } from '../icons/constants';
+import { EIconType, Icon } from '@/components/icons';
+import { ICON_COLORS } from '@/components/icons/constants';
+import type { Product } from '@/interfaces/product';
+import type { SelectedProduct } from '@/interfaces/selected-product';
+import type { AddSelectedProduct } from '@/types/selected-products';
 
 import styles from './products-card.module.css';
 
