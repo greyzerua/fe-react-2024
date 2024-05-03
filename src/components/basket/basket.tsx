@@ -1,4 +1,4 @@
-import { EAppPage } from '../../link-urls';
+import { EAppPage } from '../../constants/link-urls';
 import type { SelectedProducts } from '../../types/selected-products';
 import { AppLink } from '../app-link';
 import { EIconType, Icon } from '../icons';

@@ -1,7 +1,7 @@
 import type { ComponentProps, MouseEvent } from 'react';
 
-import type { EAppPage } from '../../link-urls';
-import { APP_LINK_URLS } from '../../link-urls';
+import type { EAppPage } from '../../constants/link-urls';
+import { APP_LINK_URLS } from '../../constants/link-urls';
 import { Link } from '../link';
 
 import styles from './app-link.module.css';

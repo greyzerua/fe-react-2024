@@ -1,6 +1,6 @@
 import headerLogo from '@/assets/logo.svg';
 
-import { EAppPage } from '../../link-urls';
+import { EAppPage } from '../../constants/link-urls';
 import type { SelectedProducts } from '../../types/selected-products';
 import { AppLink } from '../app-link';
 import { Auth } from '../auth';

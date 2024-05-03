@@ -2,10 +2,10 @@ import { useState } from 'react';
 
 import { Footer } from './components/footer';
 import { HeaderComponent } from './components/header/header';
+import { EAppPage } from './constants/link-urls';
 import { AboutPage } from './pages/about-page';
 import { ProductsPage } from './pages/products-page';
 import type { AddSelectedProduct, SelectedProducts } from './types/selected-products';
-import { EAppPage } from './link-urls';
 
 import './App.css';
 
