@@ -29,6 +29,7 @@ body {
   --primaryButtonHoverColor: #585858;
   --secondaryButtonColor: #EF4934;
   --secondaryButtonHoverColor: #D43824;
+  --blackButtonColor: #111;
 }
 
 p {
@@ -41,6 +42,12 @@ p {
 h1 {
   margin: 0;
   line-height: 1;
+}
+
+h2 {
+  margin: 0;
+  line-height: 1;
+  font-weight: 600;
 }
 
 button {

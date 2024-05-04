@@ -1,0 +1,10 @@
+.products {
+  padding: 60px 0;
+}
+
+@media (max-width: 900px) {
+
+  .products__width-container {
+    padding: 0 57px;
+  }
+}

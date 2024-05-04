@@ -3,7 +3,7 @@ import aboutImage from '@/assets/about-image.png';
 import { Link } from '../../components/link';
 import { Title } from '../../components/title';
 import { WidthContainer } from '../../components/width-container';
-import { EXTERNAL_LINK_URLS } from '../../link-urls';
+import { EXTERNAL_LINK_URLS } from '../../constants/link-urls';
 
 import styles from './about-page.module.css';
 

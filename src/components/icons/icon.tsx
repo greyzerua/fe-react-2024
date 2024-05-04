@@ -7,8 +7,8 @@ type Props = ComponentProps<'svg'> & {
     iconType: EIconType;
 };
 
-export const Icon = ({ iconType, fill }: Props) => {
+export const Icon = ({ iconType, ...restProps }: Props) => {
     const ICON_COMPONENT = Icons[iconType];
 
-    return <ICON_COMPONENT fill={fill} />;
+    return <ICON_COMPONENT {...restProps} />;
 };

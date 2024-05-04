@@ -1,4 +1,4 @@
-import { EXTERNAL_LINK_URLS } from '../../link-urls';
+import { EXTERNAL_LINK_URLS } from '../../constants/link-urls';
 import { EIconType } from '../icons';
 import { Link } from '../link';
 import { SocialIcon } from '../social-icon';
