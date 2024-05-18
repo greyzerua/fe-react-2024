@@ -20,7 +20,7 @@
 }
 
 .about__inner-info_link {
-  color: #111;
+  color: var(--textColor);
   font-weight: 400;
   text-decoration: underline;
 }

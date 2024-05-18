@@ -1,6 +1,6 @@
 .products__card {
   padding: 17.5px 15px;
-  border: 1px solid #CCC;
+  border: 1px solid var(--borderColor);
   border-radius: 20px;
   display: flex;
   flex-direction: column;
