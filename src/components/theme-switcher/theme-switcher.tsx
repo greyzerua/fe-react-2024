@@ -1,3 +1,5 @@
+import clsx from 'clsx';
+
 import { ETheme } from '../../constants/themes';
 import { EIconType, Icon } from '../icons';
 
@@ -20,14 +22,14 @@ export const ThemeSwitcher = ({ onThemeChange, currentTheme }: Props) => {
     return (
         <div className={styles['theme-switcher']}>
             <button
-                className={`${styles['theme-switcher__button']} ${currentTheme === ETheme.LIGHT ? styles['theme-switcher__button_active'] : ''}`}
+                className={clsx(styles['theme-switcher__button'], currentTheme === ETheme.LIGHT && styles['theme-switcher__button_active'])}
                 onClick={onLightClick}
             >
                 <Icon iconType={EIconType.SUN} />
             </button>
             <div className={styles['theme-switcher__separator']}></div>
             <button
-                className={`${styles['theme-switcher__button']} ${currentTheme === ETheme.DARK ? styles['theme-switcher__button_active'] : ''}`}
+                className={clsx(styles['theme-switcher__button'], currentTheme === ETheme.DARK && styles['theme-switcher__button_active'])}
                 onClick={onDarkClick}
             >
                 <Icon iconType={EIconType.MOON} />
