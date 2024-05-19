@@ -32,6 +32,8 @@ body {
   --primaryButtonHoverColor: #585858;
   --secondaryButtonColor: #EF4934;
   --secondaryButtonHoverColor: #D43824;
+  --secondaryGrey: #E1E1E1;
+  --greyHover: #F1F1F1;
 }
 
 .light-theme {
@@ -39,6 +41,11 @@ body {
   --bgColor: var(--backgroundLight);
   --textColor: var(--primaryBlack);
   --borderColor: var(--lightGrey);
+  --filterColor: var(--primaryGrey);
+  --filterBorder: var(--secondaryGrey);
+  --focusInputColor: var(--darkGrey);
+  --focusInputBackground: var(--greyHover);
+  --dropdownBackground: var(--primaryWhite);
 }
 
 .dark-theme {
@@ -46,6 +53,11 @@ body {
   --bgColor: var(--primaryBlack);
   --textColor: var(--primaryWhite);
   --borderColor: var(--darkGrey);
+  --filterColor: var(--primaryWhite);
+  --filterBorder: var(--primaryGrey);
+  --focusInputColor: var(--primaryWhite);
+  --focusInputBackground: var(--darkGrey);
+  --dropdownBackground: var(--darkGrey);
 }
 
 p {

@@ -1,0 +1,11 @@
+.products-category-list {
+  display: flex;
+  gap: 10px;
+}
+
+@media (max-width: 477px) {
+
+  .products-category-list {
+    gap: 15px;
+  }
+}
