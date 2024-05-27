@@ -1,22 +1,6 @@
 import type { Product } from '../interfaces/product';
 
-const CATEGORY_DATE = '2024-04-26T08:20:47.094Z';
-
-const CLOTHES_CATEGORY = {
-    id: 1,
-    name: 'Clothes',
-    image: 'https://i.imgur.com/QkIa5tT.jpeg',
-    creationAt: CATEGORY_DATE,
-    updatedAt: CATEGORY_DATE,
-};
-
-const ELECTRONICS_CATEGORY = {
-    id: 2,
-    name: 'Electronics',
-    image: 'https://i.imgur.com/ZANVnHE.jpeg',
-    creationAt: CATEGORY_DATE,
-    updatedAt: CATEGORY_DATE,
-};
+import { CLOTHES_CATEGORY, ELECTRONICS_CATEGORY } from './categories';
 
 const PRODUCT_DATE = '2024-04-26T08:20:47.173Z';
 
