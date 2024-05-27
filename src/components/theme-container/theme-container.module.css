@@ -1,0 +1,23 @@
+.light-theme {
+  --iconColor: var(--primaryBlack);
+  --bgColor: var(--backgroundLight);
+  --textColor: var(--primaryBlack);
+  --borderColor: var(--lightGrey);
+  --filterColor: var(--primaryGrey);
+  --filterBorder: var(--secondaryGrey);
+  --focusInputColor: var(--darkGrey);
+  --focusInputBackground: var(--greyHover);
+  --dropdownBackground: var(--primaryWhite);
+}
+
+.dark-theme {
+  --iconColor: var(--primaryWhite);
+  --bgColor: var(--primaryBlack);
+  --textColor: var(--primaryWhite);
+  --borderColor: var(--darkGrey);
+  --filterColor: var(--primaryWhite);
+  --filterBorder: var(--primaryGrey);
+  --focusInputColor: var(--primaryWhite);
+  --focusInputBackground: var(--darkGrey);
+  --dropdownBackground: var(--darkGrey);
+}

@@ -16,7 +16,7 @@
 }
 
 .auth-buttons__button_login {
-  background-color: var(--primaryButtonColor);
+  background-color: var(--darkGrey);
 }
 
 .auth-buttons__button_login:hover {

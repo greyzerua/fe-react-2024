@@ -1,9 +1,12 @@
+import { ArrowDownIcon } from './arrow-down-icon';
+import { ArrowUpIcon } from './arrow-up-icon';
 import { BasketIcon } from './basket-icon';
 import { FacebookIcon } from './facebook-icon';
 import { InstagramIcon } from './instagram-icon';
 import { LinkedinIcon } from './linkedin-icon';
 import { LoginIcon } from './login-icon';
 import { MoonIcon } from './moon-icon';
+import { SearchIcon } from './search-icon';
 import { SunIcon } from './sun-icon';
 import { UserIcon } from './user-icon';
 
@@ -16,6 +19,9 @@ export enum EIconType {
     MOON,
     LOGIN,
     USER,
+    SEARCH,
+    ARROW_UP,
+    ARROW_DOWN,
 }
 
 export const Icons = {
@@ -27,9 +33,13 @@ export const Icons = {
     [EIconType.MOON]: MoonIcon,
     [EIconType.LOGIN]: LoginIcon,
     [EIconType.USER]: UserIcon,
+    [EIconType.SEARCH]: SearchIcon,
+    [EIconType.ARROW_UP]: ArrowUpIcon,
+    [EIconType.ARROW_DOWN]: ArrowDownIcon,
 };
 
 export const ICON_COLORS = {
     DEFAULT: 'var(--primaryWhite)',
-    BLACK: 'var(--blackButtonColor)',
+    BLACK: 'var(--iconColor)',
+    FILTER: 'var(--filterColor)',
 };

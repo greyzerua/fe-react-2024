@@ -7,7 +7,7 @@ import { WidthContainer } from '../width-container';
 import styles from './footer.module.css';
 
 export const Footer = () => (
-    <footer>
+    <footer className={styles['footer']}>
         <WidthContainer>
             <div className={styles['footer__inner']}>
                 <div className={styles['footer__social-media']}>

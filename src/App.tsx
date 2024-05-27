@@ -2,18 +2,17 @@ import { useState } from 'react';
 
 import { Footer } from './components/footer';
 import { HeaderComponent } from './components/header/header';
+import { ThemeContainer } from './components/theme-container/theme-container';
+import { SELECTED_PRODUCTS_KEY } from './config/local-storage-config';
 import { EAppPage } from './constants/link-urls';
 import { AboutPage } from './pages/about-page';
 import { ProductsPage } from './pages/products-page';
 import type { AddSelectedProduct, SelectedProducts } from './types/selected-products';
 
-import './App.css';
-
-const SELECTED_PRODUCTS_KEY = 'selected-products-key';
+import styles from './App.module.css';
 
 const App = () => {
     const selectedProductsStorage = JSON.parse(localStorage.getItem(SELECTED_PRODUCTS_KEY) || JSON.stringify({}));
-
     const [currentPage, setCurrentPage] = useState<EAppPage>(EAppPage.ABOUT);
     const [selectedProducts, setSelectedProducts] = useState<SelectedProducts>(selectedProductsStorage);
 
@@ -44,11 +43,11 @@ const App = () => {
     }
 
     return (
-        <>
+        <ThemeContainer className={styles.app}>
             <HeaderComponent onPageChange={setCurrentPage} currentPage={currentPage} selectedProducts={selectedProducts} />
-            <main>{pageElement}</main>
+            <main className={styles['app-main']}>{pageElement}</main>
             <Footer />
-        </>
+        </ThemeContainer>
     );
 };
 

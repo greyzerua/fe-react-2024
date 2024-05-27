@@ -23,17 +23,21 @@ body {
   text-rendering: optimizelegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
   --primaryWhite: #FFF;
   --primaryGrey: #656565;
-  --primaryButtonColor: #333;
+  --primaryBlack: #111;
+  --lightGrey: #CCC;
+  --darkGrey: #333;
   --primaryButtonHoverColor: #585858;
   --secondaryButtonColor: #EF4934;
   --secondaryButtonHoverColor: #D43824;
-  --blackButtonColor: #111;
+  --secondaryGrey: #E1E1E1;
+  --greyHover: #F1F1F1;
 }
 
 p {
-  color: #111;
+  color: var(--textColor);
   margin: 0;
   font-weight: 400;
   font-size: 22px;
@@ -45,6 +49,7 @@ h1 {
 }
 
 h2 {
+  color: var(--textColor);
   margin: 0;
   line-height: 1;
   font-weight: 600;
