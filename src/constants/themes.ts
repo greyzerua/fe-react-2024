@@ -3,7 +3,4 @@ export enum ETheme {
     DARK = 'DARK',
 }
 
-export const THEME_CLASSES = {
-    [ETheme.LIGHT]: 'light-theme',
-    [ETheme.DARK]: 'dark-theme',
-};
+export const THEME_UPDATE_EVENT = 'THEME_UPDATE_EVENT';

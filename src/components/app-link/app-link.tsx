@@ -8,6 +8,15 @@ import { Link } from '../link';
 
 import styles from './app-link.module.css';
 
+interface GetClassNameParameters {
+    className?: string;
+    dataHover?: string;
+    isCurrentPage: boolean;
+}
+
+const getClassName = ({ className, dataHover, isCurrentPage }: GetClassNameParameters) =>
+    clsx(styles['app-link'], className, dataHover && 'bold-hover', isCurrentPage && styles['app-link_active']);
+
 type Props = ComponentProps<'a'> & {
     dataHover?: string;
     currentPage: EAppPage;
@@ -26,7 +35,7 @@ export const AppLink = ({ className, onPageChange, page, currentPage, children, 
     return (
         <Link
             href={href}
-            className={clsx(styles['app-link'], className, dataHover && 'bold-hover', page === currentPage && styles['app-link_active'])}
+            className={getClassName({ className, dataHover, isCurrentPage: currentPage === page })}
             data-hover={dataHover}
             onClick={onClick}
             {...restProps}

@@ -1,5 +1,4 @@
 import headerLogo from '@/assets/logo.svg';
-import type { ETheme } from '@/constants/themes';
 
 import { EAppPage } from '../../constants/link-urls';
 import type { SelectedProducts } from '../../types/selected-products';
@@ -15,12 +14,10 @@ import styles from './header.module.css';
 interface Props {
     onPageChange: (page: EAppPage) => void;
     currentPage: EAppPage;
-    onThemeChange: (theme: ETheme) => void;
-    currentTheme: ETheme;
     selectedProducts: SelectedProducts;
 }
 
-export const HeaderComponent = ({ onPageChange, currentPage, selectedProducts, currentTheme, onThemeChange }: Props) => (
+export const HeaderComponent = ({ onPageChange, currentPage, selectedProducts }: Props) => (
     <header className={styles.header}>
         <WidthContainer>
             <div className={styles['header__container']}>
@@ -28,7 +25,7 @@ export const HeaderComponent = ({ onPageChange, currentPage, selectedProducts, c
                     <AppLink onPageChange={onPageChange} currentPage={currentPage} page={EAppPage.ROOT} className={styles['header__logo']}>
                         <img src={headerLogo} alt="logo" />
                     </AppLink>
-                    <ThemeSwitcher onThemeChange={onThemeChange} currentTheme={currentTheme} />
+                    <ThemeSwitcher />
                 </div>
 
                 <div className={styles['header__inner_right']}>
