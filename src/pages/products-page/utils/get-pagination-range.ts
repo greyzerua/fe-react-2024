@@ -22,7 +22,7 @@ export const getPaginationRange = (currentPage: number, pageCount: number) => {
 
     rangeItems.push(...siblingRange);
 
-    const lastEndRangeElement = rangeStart.at(-1);
+    const lastEndRangeElement = rangeEnd.at(-1);
     if (lastEndRangeElement) {
         if (rangeEnd.length > 1) {
             rangeItems.push(DOTS);
