@@ -29,3 +29,5 @@ export const PRODUCTS_SORTING = {
 export const DEFAULT_PAGE_SIZE = 8;
 
 export const DEFAULT_PAGE = 1;
+
+export const DOTS = 'DOTS';

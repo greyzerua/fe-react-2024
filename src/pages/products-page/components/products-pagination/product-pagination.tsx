@@ -2,7 +2,11 @@ import { useMemo } from 'react';
 
 import clsx from 'clsx';
 
+import { DOTS } from '../../constants';
+import { getPaginationRange } from '../../utils/get-pagination-range';
+
 import styles from './product-pagination.module.css';
+
 interface Props {
     totalCount: number;
     pageSize: number;
@@ -16,13 +20,7 @@ const getButtonClassName = (isActive?: boolean) =>
 export const ProductPagination = ({ totalCount, pageSize, currentPage, onPageChange }: Props) => {
     const pageCount = Math.ceil(totalCount / pageSize);
 
-    const paginationNumbers = useMemo(() => {
-        const paginationItems = [];
-        for (let index = 1; index <= pageCount; index++) {
-            paginationItems.push(index);
-        }
-        return paginationItems;
-    }, [pageCount]);
+    const range = useMemo(() => getPaginationRange(currentPage, pageCount), [currentPage, pageCount]);
 
     const onPreviousClick = () => {
         onPageChange(--currentPage);
@@ -40,11 +38,15 @@ export const ProductPagination = ({ totalCount, pageSize, currentPage, onPageCha
                         &lt;
                     </button>
                 </li>
-                {paginationNumbers.map((item) => (
-                    <li key={item}>
-                        <button className={getButtonClassName(currentPage === item)} onClick={() => onPageChange(item)}>
-                            {item}
-                        </button>
+                {range.map((item, index) => (
+                    <li key={`page-${item}-i-${index}`}>
+                        {item === DOTS ? (
+                            <span className={styles['products-pagination__ellipsis']}>...</span>
+                        ) : (
+                            <button className={getButtonClassName(currentPage === item)} onClick={() => onPageChange(item)}>
+                                {item}
+                            </button>
+                        )}
                     </li>
                 ))}
                 <li>

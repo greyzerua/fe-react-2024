@@ -20,6 +20,17 @@
   transition: .2s all ease;
 }
 
+.products-pagination__ellipsis {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  font-weight: 600;
+  color: var(--textColor);
+  letter-spacing: 1px;
+}
+
 .products-pagination__button_active {
   background-color: var(--secondaryButtonColor);
   color: var(--primaryWhite);
