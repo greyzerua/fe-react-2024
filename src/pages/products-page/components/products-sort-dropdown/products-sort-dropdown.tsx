@@ -22,7 +22,7 @@ const ProductSortDropdown = ({ onSortingChange }: Props) => {
 
     useEffect(() => {
         onSortingChange(selectedItem);
-    }, [selectedItem]);
+    }, [selectedItem, onSortingChange]);
 
     const toggleOpened = () => {
         setIsOpened(!isOpened);

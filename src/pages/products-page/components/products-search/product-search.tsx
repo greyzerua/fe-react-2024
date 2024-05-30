@@ -10,16 +10,21 @@ interface Props {
 }
 
 const ProductSearch = ({ onSearchChange }: Props) => {
+    const [searchValue, setSearchValue] = useState<string>('');
     const [value, setValue] = useState<string>('');
 
     const inputReference = useRef<HTMLInputElement | null>(null);
 
     useEffect(() => {
-        onSearchChange(value);
-    }, [value]);
+        onSearchChange(searchValue);
+    }, [searchValue, onSearchChange]);
 
     const onSearchSubmit = () => {
-        setValue(inputReference.current?.value || '');
+        setSearchValue(inputReference.current?.value || '');
+    };
+
+    const onDeleteValue = () => {
+        setValue('');
     };
 
     const onKeyDown = (event: KeyboardEvent<HTMLInputElement>) => {
@@ -36,7 +41,12 @@ const ProductSearch = ({ onSearchChange }: Props) => {
                 placeholder="Search..."
                 className={styles['product-search__input']}
                 onKeyDown={onKeyDown}
+                onChange={(event) => setValue(event.target.value)}
+                value={value}
             />
+            <button className={styles['product-close__button']} onClick={onDeleteValue}>
+                {value && <Icon iconType={EIconType.CLOSE} />}
+            </button>
             <button className={styles['product-search__button']} onClick={onSearchSubmit}>
                 <Icon iconType={EIconType.SEARCH} />
             </button>

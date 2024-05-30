@@ -16,7 +16,7 @@ const ProductCategoryList = ({ onCategoriesChange }: Props) => {
 
     useEffect(() => {
         onCategoriesChange(selectedCategories);
-    }, [selectedCategories]);
+    }, [selectedCategories, onCategoriesChange]);
 
     const onSelectCategory = (id: Category['id']) => {
         setSelectedCategories((previousSelectedCategories) =>
