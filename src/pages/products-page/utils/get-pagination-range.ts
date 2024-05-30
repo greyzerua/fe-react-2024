@@ -12,8 +12,9 @@ export const getPaginationRange = (currentPage: number, pageCount: number) => {
     const rangeEnd = getRange(rightSibling + 1, pageCount);
     const siblingRange = getRange(leftSibling, rightSibling);
 
-    if (rangeStart.length > 0) {
-        rangeItems.push(rangeStart[0]);
+    const firstStartRangeElement = rangeStart.at(0);
+    if (firstStartRangeElement) {
+        rangeItems.push(firstStartRangeElement);
         if (rangeStart.length > 1) {
             rangeItems.push(DOTS);
         }
@@ -21,11 +22,12 @@ export const getPaginationRange = (currentPage: number, pageCount: number) => {
 
     rangeItems.push(...siblingRange);
 
-    if (rangeEnd.length > 0) {
+    const lastEndRangeElement = rangeStart.at(-1);
+    if (lastEndRangeElement) {
         if (rangeEnd.length > 1) {
             rangeItems.push(DOTS);
         }
-        rangeItems.push(rangeEnd.at(-1));
+        rangeItems.push(lastEndRangeElement);
     }
 
     return rangeItems;
