@@ -19,11 +19,19 @@ export const ELECTRONICS_CATEGORY: Category = {
 };
 
 export const SHOES_CATEGORY: Category = {
-    id: 3,
+    id: 4,
     name: 'Shoes',
     image: 'https://i.imgur.com/ZANVnHE.jpeg',
     creationAt: CATEGORY_DATE,
     updatedAt: CATEGORY_DATE,
 };
 
-export const CATEGORIES: Array<Category> = [CLOTHES_CATEGORY, ELECTRONICS_CATEGORY, SHOES_CATEGORY];
+export const FURNITURE_CATEGORY: Category = {
+    id: 3,
+    name: 'Furniture',
+    image: 'https://i.imgur.com/Qphac99.jpeg',
+    creationAt: CATEGORY_DATE,
+    updatedAt: CATEGORY_DATE,
+};
+
+export const CATEGORIES: Array<Category> = [CLOTHES_CATEGORY, ELECTRONICS_CATEGORY, FURNITURE_CATEGORY, SHOES_CATEGORY];

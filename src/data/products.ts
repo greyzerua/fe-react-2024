@@ -1,8 +1,8 @@
 import type { Product } from '../interfaces/product';
 
-import { CLOTHES_CATEGORY, ELECTRONICS_CATEGORY } from './categories';
+import { CLOTHES_CATEGORY, ELECTRONICS_CATEGORY, FURNITURE_CATEGORY, SHOES_CATEGORY } from './categories';
 
-const PRODUCT_DATE = '2024-04-26T08:20:47.173Z';
+const PRODUCT_DATE = '2024-05-27T20:19:05.017Z';
 
 export const PRODUCTS: Product[] = [
     {
@@ -268,5 +268,225 @@ export const PRODUCTS: Product[] = [
         creationAt: PRODUCT_DATE,
         updatedAt: PRODUCT_DATE,
         category: ELECTRONICS_CATEGORY,
+    },
+    {
+        id: 25,
+        title: 'Stylish Red & Silver Over-Ear Headphones',
+        price: 39,
+        description:
+            'Immerse yourself in superior sound quality with these sleek red and silver over-ear headphones. Designed for comfort and style, the headphones feature cushioned ear cups, an adjustable padded headband, and a detachable red cable for easy storage and portability. Perfect for music lovers and audiophiles who value both appearance and audio fidelity.',
+        images: ['https://i.imgur.com/YaSqa06.jpeg', 'https://i.imgur.com/isQAliJ.jpeg', 'https://i.imgur.com/5B8UQfh.jpeg'],
+        creationAt: PRODUCT_DATE,
+        updatedAt: PRODUCT_DATE,
+        category: ELECTRONICS_CATEGORY,
+    },
+    {
+        id: 26,
+        title: 'Sleek Mirror Finish Phone Case',
+        price: 27,
+        description:
+            "Enhance your smartphone's look with this ultra-sleek mirror finish phone case. Designed to offer style with protection, the case features a reflective surface that adds a touch of elegance while keeping your device safe from scratches and impacts. Perfect for those who love a minimalist and modern aesthetic.",
+        images: ['https://i.imgur.com/yb9UQKL.jpeg', 'https://i.imgur.com/m2owtQG.jpeg', 'https://i.imgur.com/bNiORct.jpeg'],
+        creationAt: PRODUCT_DATE,
+        updatedAt: PRODUCT_DATE,
+        category: ELECTRONICS_CATEGORY,
+    },
+    {
+        id: 27,
+        title: 'Sleek Smartwatch with Vibrant Display',
+        price: 16,
+        description:
+            'Experience modern timekeeping with our high-tech smartwatch, featuring a vivid touch screen display, customizable watch faces, and a comfortable blue silicone strap. This smartwatch keeps you connected with notifications and fitness tracking while showcasing exceptional style and versatility.',
+        images: ['https://i.imgur.com/LGk9Jn2.jpeg', 'https://i.imgur.com/1ttYWaI.jpeg', 'https://i.imgur.com/sPRWnJH.jpeg'],
+        creationAt: PRODUCT_DATE,
+        updatedAt: PRODUCT_DATE,
+        category: ELECTRONICS_CATEGORY,
+    },
+    {
+        id: 28,
+        title: 'Sleek Modern Leather Sofa',
+        price: 53,
+        description:
+            'Enhance the elegance of your living space with our Sleek Modern Leather Sofa. Designed with a minimalist aesthetic, it features clean lines and a luxurious leather finish. The robust metal legs provide stability and support, while the plush cushions ensure comfort. Perfect for contemporary homes or office waiting areas, this sofa is a statement piece that combines style with practicality.',
+        images: ['https://i.imgur.com/Qphac99.jpeg', 'https://i.imgur.com/dJjpEgG.jpeg', 'https://i.imgur.com/MxJyADq.jpeg'],
+        creationAt: PRODUCT_DATE,
+        updatedAt: PRODUCT_DATE,
+        category: FURNITURE_CATEGORY,
+    },
+    {
+        id: 29,
+        title: 'Mid-Century Modern Wooden Dining Table',
+        price: 24,
+        description:
+            'Elevate your dining room with this sleek Mid-Century Modern dining table, featuring an elegant walnut finish and tapered legs for a timeless aesthetic. Its sturdy wood construction and minimalist design make it a versatile piece that fits with a variety of decor styles. Perfect for intimate dinners or as a stylish spot for your morning coffee.',
+        images: ['https://i.imgur.com/DMQHGA0.jpeg', 'https://i.imgur.com/qrs9QBg.jpeg', 'https://i.imgur.com/XVp8T1I.jpeg'],
+        creationAt: PRODUCT_DATE,
+        updatedAt: PRODUCT_DATE,
+        category: FURNITURE_CATEGORY,
+    },
+    {
+        id: 30,
+        title: 'Elegant Golden-Base Stone Top Dining Table',
+        price: 66,
+        description:
+            'Elevate your dining space with this luxurious table, featuring a sturdy golden metal base with an intricate rod design that provides both stability and chic elegance. The smooth stone top in a sleek round shape offers a robust surface for your dining pleasure. Perfect for both everyday meals and special occasions, this table easily complements any modern or glam decor.',
+        images: ['https://i.imgur.com/NWIJKUj.jpeg', 'https://i.imgur.com/Jn1YSLk.jpeg', 'https://i.imgur.com/VNZRvx5.jpeg'],
+        creationAt: PRODUCT_DATE,
+        updatedAt: PRODUCT_DATE,
+        category: FURNITURE_CATEGORY,
+    },
+    {
+        id: 31,
+        title: 'Modern Elegance Teal Armchair',
+        price: 25,
+        description:
+            'Elevate your living space with this beautifully crafted armchair, featuring a sleek wooden frame that complements its vibrant teal upholstery. Ideal for adding a pop of color and contemporary style to any room, this chair provides both superb comfort and sophisticated design. Perfect for reading, relaxing, or creating a cozy conversation nook.',
+        images: ['https://i.imgur.com/6wkyyIN.jpeg', 'https://i.imgur.com/Ald3Rec.jpeg', 'https://i.imgur.com/dIqo03c.jpeg'],
+        creationAt: PRODUCT_DATE,
+        updatedAt: PRODUCT_DATE,
+        category: FURNITURE_CATEGORY,
+    },
+    {
+        id: 32,
+        title: 'Elegant Solid Wood Dining Table',
+        price: 67,
+        description:
+            'Enhance your dining space with this sleek, contemporary dining table, crafted from high-quality solid wood with a warm finish. Its sturdy construction and minimalist design make it a perfect addition for any home looking for a touch of elegance. Accommodates up to six guests comfortably and includes a striking fruit bowl centerpiece. The overhead lighting is not included.',
+        images: ['https://i.imgur.com/4lTaHfF.jpeg', 'https://i.imgur.com/JktHE1C.jpeg', 'https://i.imgur.com/cQeXQMi.jpeg'],
+        creationAt: PRODUCT_DATE,
+        updatedAt: PRODUCT_DATE,
+        category: FURNITURE_CATEGORY,
+    },
+    {
+        id: 33,
+        title: 'Modern Minimalist Workstation Setup',
+        price: 49,
+        description:
+            'Elevate your home office with our Modern Minimalist Workstation Setup, featuring a sleek wooden desk topped with an elegant computer, stylish adjustable wooden desk lamp, and complimentary accessories for a clean, productive workspace. This setup is perfect for professionals seeking a contemporary look that combines functionality with design.',
+        images: ['https://i.imgur.com/3oXNBst.jpeg', 'https://i.imgur.com/ErYYZnT.jpeg', 'https://i.imgur.com/boBPwYW.jpeg'],
+        creationAt: PRODUCT_DATE,
+        updatedAt: PRODUCT_DATE,
+        category: FURNITURE_CATEGORY,
+    },
+    {
+        id: 34,
+        title: 'Modern Ergonomic Office Chair',
+        price: 71,
+        description:
+            'Elevate your office space with this sleek and comfortable Modern Ergonomic Office Chair. Designed to provide optimal support throughout the workday, it features an adjustable height mechanism, smooth-rolling casters for easy mobility, and a cushioned seat for extended comfort. The clean lines and minimalist white design make it a versatile addition to any contemporary workspace.',
+        images: ['https://i.imgur.com/3dU0m72.jpeg', 'https://i.imgur.com/zPU3EVa.jpeg'],
+        creationAt: PRODUCT_DATE,
+        updatedAt: PRODUCT_DATE,
+        category: FURNITURE_CATEGORY,
+    },
+    {
+        id: 35,
+        title: 'Futuristic Holographic Soccer Cleats',
+        price: 39,
+        description:
+            "Step onto the field and stand out from the crowd with these eye-catching holographic soccer cleats. Designed for the modern player, these cleats feature a sleek silhouette, lightweight construction for maximum agility, and durable studs for optimal traction. The shimmering holographic finish reflects a rainbow of colors as you move, ensuring that you'll be noticed for both your skills and style. Perfect for the fashion-forward athlete who wants to make a statement.",
+        images: ['https://i.imgur.com/qNOjJje.jpeg', 'https://i.imgur.com/NjfCFnu.jpeg', 'https://i.imgur.com/eYtvXS1.jpeg'],
+        creationAt: PRODUCT_DATE,
+        updatedAt: PRODUCT_DATE,
+        category: SHOES_CATEGORY,
+    },
+    {
+        id: 36,
+        title: 'Rainbow Glitter High Heels',
+        price: 39,
+        description:
+            'Step into the spotlight with these eye-catching rainbow glitter high heels. Designed to dazzle, each shoe boasts a kaleidoscope of shimmering colors that catch and reflect light with every step. Perfect for special occasions or a night out, these stunners are sure to turn heads and elevate any ensemble.',
+        images: ['https://i.imgur.com/62gGzeF.jpeg', 'https://i.imgur.com/5MoPuFM.jpeg', 'https://i.imgur.com/sUVj7pK.jpeg'],
+        creationAt: PRODUCT_DATE,
+        updatedAt: PRODUCT_DATE,
+        category: SHOES_CATEGORY,
+    },
+    {
+        id: 37,
+        title: 'Chic Summer Denim Espadrille Sandals',
+        price: 33,
+        description:
+            'Step into summer with style in our denim espadrille sandals. Featuring a braided jute sole for a classic touch and adjustable denim straps for a snug fit, these sandals offer both comfort and a fashionable edge. The easy slip-on design ensures convenience for beach days or casual outings.',
+        images: ['https://i.imgur.com/9qrmE1b.jpeg', 'https://i.imgur.com/wqKxBVH.jpeg', 'https://i.imgur.com/sWSV6DK.jpeg'],
+        creationAt: PRODUCT_DATE,
+        updatedAt: PRODUCT_DATE,
+        category: SHOES_CATEGORY,
+    },
+    {
+        id: 38,
+        title: 'Vibrant Runners: Bold Orange & Blue Sneakers',
+        price: 27,
+        description:
+            "Step into style with these eye-catching sneakers featuring a striking combination of orange and blue hues. Designed for both comfort and fashion, these shoes come with flexible soles and cushioned insoles, perfect for active individuals who don't compromise on style. The reflective silver accents add a touch of modernity, making them a standout accessory for your workout or casual wear.",
+        images: ['https://i.imgur.com/hKcMNJs.jpeg', 'https://i.imgur.com/NYToymX.jpeg', 'https://i.imgur.com/HiiapCt.jpeg'],
+        creationAt: PRODUCT_DATE,
+        updatedAt: PRODUCT_DATE,
+        category: SHOES_CATEGORY,
+    },
+    {
+        id: 39,
+        title: 'Vibrant Pink Classic Sneakers',
+        price: 84,
+        description:
+            'Step into style with our Vibrant Pink Classic Sneakers! These eye-catching shoes feature a bold pink hue with iconic white detailing, offering a sleek, timeless design. Constructed with durable materials and a comfortable fit, they are perfect for those seeking a pop of color in their everyday footwear. Grab a pair today and add some vibrancy to your step!',
+        images: ['https://i.imgur.com/mcW42Gi.jpeg', 'https://i.imgur.com/mhn7qsF.jpeg', 'https://i.imgur.com/F8vhnFJ.jpeg'],
+        creationAt: PRODUCT_DATE,
+        updatedAt: PRODUCT_DATE,
+        category: SHOES_CATEGORY,
+    },
+    {
+        id: 40,
+        title: 'Futuristic Silver and Gold High-Top Sneaker',
+        price: 68,
+        description:
+            'Step into the future with this eye-catching high-top sneaker, designed for those who dare to stand out. The sneaker features a sleek silver body with striking gold accents, offering a modern twist on classic footwear. Its high-top design provides support and style, making it the perfect addition to any avant-garde fashion collection. Grab a pair today and elevate your shoe game!',
+        images: ['https://i.imgur.com/npLfCGq.jpeg', 'https://i.imgur.com/vYim3gj.jpeg', 'https://i.imgur.com/HxuHwBO.jpeg'],
+        creationAt: PRODUCT_DATE,
+        updatedAt: PRODUCT_DATE,
+        category: SHOES_CATEGORY,
+    },
+    {
+        id: 41,
+        title: 'Futuristic Chic High-Heel Boots',
+        price: 36,
+        description:
+            'Elevate your style with our cutting-edge high-heel boots that blend bold design with avant-garde aesthetics. These boots feature a unique color-block heel, a sleek silhouette, and a versatile light grey finish that pairs easily with any cutting-edge outfit. Crafted for the fashion-forward individual, these boots are sure to make a statement.',
+        images: ['https://i.imgur.com/HqYqLnW.jpeg', 'https://i.imgur.com/RlDGnZw.jpeg', 'https://i.imgur.com/qa0O6fg.jpeg'],
+        creationAt: PRODUCT_DATE,
+        updatedAt: PRODUCT_DATE,
+        category: SHOES_CATEGORY,
+    },
+    {
+        id: 42,
+        title: 'Elegant Patent Leather Peep-Toe Pumps with Gold-Tone Heel',
+        price: 53,
+        description:
+            'Step into sophistication with these chic peep-toe pumps, showcasing a lustrous patent leather finish and an eye-catching gold-tone block heel. The ornate buckle detail adds a touch of glamour, perfect for elevating your evening attire or complementing a polished daytime look.',
+        images: ['https://i.imgur.com/AzAY4Ed.jpeg', 'https://i.imgur.com/umfnS9P.jpeg', 'https://i.imgur.com/uFyuvLg.jpeg'],
+        creationAt: PRODUCT_DATE,
+        updatedAt: PRODUCT_DATE,
+        category: SHOES_CATEGORY,
+    },
+    {
+        id: 43,
+        title: 'Elegant Purple Leather Loafers',
+        price: 17,
+        description:
+            "Step into sophistication with our Elegant Purple Leather Loafers, perfect for making a bold statement. Crafted from high-quality leather with a vibrant purple finish, these shoes feature a classic loafer silhouette that's been updated with a contemporary twist. The comfortable slip-on design and durable soles ensure both style and functionality for the modern man.",
+        images: ['https://i.imgur.com/Au8J9sX.jpeg', 'https://i.imgur.com/gdr8BW2.jpeg', 'https://i.imgur.com/KDCZxnJ.jpeg'],
+        creationAt: PRODUCT_DATE,
+        updatedAt: PRODUCT_DATE,
+        category: SHOES_CATEGORY,
+    },
+    {
+        id: 44,
+        title: 'Classic Blue Suede Casual Shoes',
+        price: 39,
+        description:
+            'Step into comfort with our Classic Blue Suede Casual Shoes, perfect for everyday wear. These shoes feature a stylish blue suede upper, durable rubber soles for superior traction, and classic lace-up fronts for a snug fit. The sleek design pairs well with both jeans and chinos, making them a versatile addition to any wardrobe.',
+        images: ['https://i.imgur.com/sC0ztOB.jpeg', 'https://i.imgur.com/Jf9DL9R.jpeg', 'https://i.imgur.com/R1IN95T.jpeg'],
+        creationAt: PRODUCT_DATE,
+        updatedAt: PRODUCT_DATE,
+        category: SHOES_CATEGORY,
     },
 ];

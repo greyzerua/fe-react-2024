@@ -25,6 +25,7 @@ const ProductSearch = ({ onSearchChange }: Props) => {
 
     const onDeleteValue = () => {
         setValue('');
+        setSearchValue('');
     };
 
     const onKeyDown = (event: KeyboardEvent<HTMLInputElement>) => {

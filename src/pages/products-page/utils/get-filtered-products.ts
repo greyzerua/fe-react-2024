@@ -13,14 +13,14 @@ interface Parameters {
 export const getFilteredProducts = ({ selectedCategories, sortType, searchValue }: Parameters) => {
     let filteredProducts = PRODUCTS;
 
-    if (selectedCategories.length > 0) {
-        filteredProducts = filteredProducts.filter((product) => selectedCategories.includes(product.category.id));
-    }
-
     const trimmedSearch = searchValue.trim();
 
-    if (trimmedSearch.length > 0) {
-        filteredProducts = filteredProducts.filter((product) => product.title.toLowerCase().includes(trimmedSearch.toLowerCase()));
+    if (selectedCategories.length > 0 || trimmedSearch.length > 0) {
+        filteredProducts = filteredProducts.filter((product) => {
+            const isMatchCategory = selectedCategories.length === 0 || selectedCategories.includes(product.category.id);
+            const isMatchName = trimmedSearch.length === 0 || product.title.toLowerCase().includes(trimmedSearch.toLowerCase());
+            return isMatchCategory && isMatchName;
+        });
     }
 
     if (sortType) {

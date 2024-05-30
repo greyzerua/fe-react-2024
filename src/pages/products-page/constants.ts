@@ -25,3 +25,7 @@ export const PRODUCTS_SORTING = {
         predicate: (a: Product, b: Product) => new Date(b.creationAt).getTime() - new Date(a.creationAt).getTime(),
     },
 };
+
+export const DEFAULT_PAGE_SIZE = 8;
+
+export const DEFAULT_PAGE = 1;
