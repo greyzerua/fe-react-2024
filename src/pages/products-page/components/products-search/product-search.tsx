@@ -45,9 +45,11 @@ const ProductSearch = ({ onSearchChange }: Props) => {
                 onChange={(event) => setValue(event.target.value)}
                 value={value}
             />
-            <button className={styles['product-close__button']} onClick={onDeleteValue}>
-                {value && <Icon iconType={EIconType.CLOSE} />}
-            </button>
+            {value && (
+                <button className={styles['product-close__button']} onClick={onDeleteValue}>
+                    <Icon iconType={EIconType.CLOSE} />
+                </button>
+            )}
             <button className={styles['product-search__button']} onClick={onSearchSubmit}>
                 <Icon iconType={EIconType.SEARCH} />
             </button>

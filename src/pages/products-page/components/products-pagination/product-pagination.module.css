@@ -45,3 +45,10 @@
   background-color: var(--secondaryButtonHoverColor);
   color: var(--primaryWhite);
 }
+
+@media (max-width: 1040px) {
+
+  .products-pagination {
+    margin-top: 60px;
+  }
+}

@@ -11,7 +11,7 @@ interface Parameters {
 }
 
 export const getFilteredProducts = ({ selectedCategories, sortType, searchValue }: Parameters) => {
-    let filteredProducts = PRODUCTS;
+    let filteredProducts = [...PRODUCTS];
 
     const trimmedSearch = searchValue.trim();
 
