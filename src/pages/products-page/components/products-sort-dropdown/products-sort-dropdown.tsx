@@ -1,18 +1,28 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import clsx from 'clsx';
 
 import { EIconType, Icon } from '@/components/icons';
 import { ICON_COLORS } from '@/components/icons/constants';
 
+import { EProductsSort, PRODUCTS_SORTING } from '../../constants';
+
 import styles from './products-sort-dropdown.module.css';
 
-const DROPDOWN_ELEMENTS = ['Price (High - Low)', 'Price (Low- High)', 'Newest', 'Oldest'];
+const DROPDOWN_ELEMENTS = [EProductsSort.PRICE_DESC, EProductsSort.PRICE_ASC, EProductsSort.DATE_DESC, EProductsSort.DATE_ASC];
 
-const ProductSortDropdown = () => {
-    const [selectedItem, setSelectedItem] = useState<string>(DROPDOWN_ELEMENTS[0]);
+interface Props {
+    onSortingChange: (sortingType: EProductsSort) => void;
+}
+
+const ProductSortDropdown = ({ onSortingChange }: Props) => {
+    const [selectedItem, setSelectedItem] = useState<EProductsSort>(DROPDOWN_ELEMENTS[0]);
     const [isOpened, setIsOpened] = useState<boolean>(false);
     const [isButtonHovered, setIsButtonHovered] = useState<boolean>(false);
+
+    useEffect(() => {
+        onSortingChange(selectedItem);
+    }, [selectedItem, onSortingChange]);
 
     const toggleOpened = () => {
         setIsOpened(!isOpened);
@@ -22,7 +32,7 @@ const ProductSortDropdown = () => {
         setIsButtonHovered(!isButtonHovered);
     };
 
-    const onItemClick = (element: string) => {
+    const onItemClick = (element: EProductsSort) => {
         setSelectedItem(element);
         toggleOpened();
     };
@@ -35,7 +45,7 @@ const ProductSortDropdown = () => {
                 onMouseEnter={toggleButtonHovered}
                 onMouseLeave={toggleButtonHovered}
             >
-                {selectedItem}
+                {PRODUCTS_SORTING[selectedItem].name}
                 <span className={styles['products-sort-dropdown__arrow']}>
                     <Icon
                         iconType={isOpened ? EIconType.ARROW_UP : EIconType.ARROW_DOWN}
@@ -46,7 +56,7 @@ const ProductSortDropdown = () => {
             <ul className={styles['products-sort-dropdown__list']}>
                 {DROPDOWN_ELEMENTS.filter((element) => element !== selectedItem).map((element) => (
                     <li key={element} className={styles['products-sort-dropdown__list-item']} onClick={() => onItemClick(element)}>
-                        {element}
+                        {PRODUCTS_SORTING[element].name}
                     </li>
                 ))}
             </ul>

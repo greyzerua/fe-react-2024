@@ -8,6 +8,7 @@
   --focusInputColor: var(--darkGrey);
   --focusInputBackground: var(--greyHover);
   --dropdownBackground: var(--primaryWhite);
+  --arrowDisabledColor: var(--lightGrey);
 }
 
 .dark-theme {
@@ -20,4 +21,5 @@
   --focusInputColor: var(--primaryWhite);
   --focusInputBackground: var(--darkGrey);
   --dropdownBackground: var(--darkGrey);
+  --arrowDisabledColor: var(--primaryGrey);
 }

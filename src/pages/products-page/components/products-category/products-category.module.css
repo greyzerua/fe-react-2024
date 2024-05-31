@@ -22,3 +22,10 @@
 .product-category__button_active:hover {
   background-color: var(--secondaryButtonHoverColor);
 }
+
+@media (max-width: 500px) {
+
+  .product-category__button {
+    width: 40%;
+  }
+}
