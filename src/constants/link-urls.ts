@@ -11,7 +11,6 @@ export const APP_LINK_URLS = {
     [EAppPage.BASKET]: '/basket',
     [EAppPage.LOGIN]: '/login',
     [EAppPage.SIGNUP]: '/sign-up',
-    [EAppPage.ABOUT]: '/about',
     [EAppPage.PRODUCTS]: '/products',
     [EAppPage.ROOT]: '/',
 };

@@ -1,10 +1,10 @@
-import type { ComponentProps, MouseEvent } from 'react';
+import type { ComponentProps } from 'react';
+import { NavLink } from 'react-router-dom';
 
 import clsx from 'clsx';
 
 import type { EAppPage } from '../../constants/link-urls';
 import { APP_LINK_URLS } from '../../constants/link-urls';
-import { Link } from '../link';
 
 import styles from './app-link.module.css';
 
@@ -19,28 +19,20 @@ const getClassName = ({ className, dataHover, isCurrentPage }: GetClassNameParam
 
 type Props = ComponentProps<'a'> & {
     dataHover?: string;
-    currentPage: EAppPage;
     page: EAppPage;
-    onPageChange: (page: EAppPage) => void;
 };
 
-export const AppLink = ({ className, onPageChange, page, currentPage, children, dataHover, ...restProps }: Props) => {
-    const href = APP_LINK_URLS[page];
-
-    const onClick = (event: MouseEvent<HTMLAnchorElement>) => {
-        event.preventDefault();
-        onPageChange(page);
-    };
+export const AppLink = ({ className, page, children, dataHover, ...restProps }: Props) => {
+    const to = APP_LINK_URLS[page];
 
     return (
-        <Link
-            href={href}
-            className={getClassName({ className, dataHover, isCurrentPage: currentPage === page })}
+        <NavLink
+            to={to}
+            className={({ isActive }) => getClassName({ className, dataHover, isCurrentPage: isActive })}
             data-hover={dataHover}
-            onClick={onClick}
             {...restProps}
         >
             {children}
-        </Link>
+        </NavLink>
     );
 };

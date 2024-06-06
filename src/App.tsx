@@ -1,19 +1,15 @@
 import { useState } from 'react';
+import { Route, Routes } from 'react-router-dom';
 
-import { Footer } from './components/footer';
-import { HeaderComponent } from './components/header/header';
-import { ThemeContainer } from './components/theme-container/theme-container';
+import { LayoutComponent } from './components/layout-component/layout-component';
 import { SELECTED_PRODUCTS_KEY } from './config/local-storage-config';
-import { EAppPage } from './constants/link-urls';
+import { APP_LINK_URLS, EAppPage } from './constants/link-urls';
 import { AboutPage } from './pages/about-page';
 import { ProductsPage } from './pages/products-page';
 import type { AddSelectedProduct, SelectedProducts } from './types/selected-products';
 
-import styles from './App.module.css';
-
 const App = () => {
     const selectedProductsStorage = JSON.parse(localStorage.getItem(SELECTED_PRODUCTS_KEY) || JSON.stringify({}));
-    const [currentPage, setCurrentPage] = useState<EAppPage>(EAppPage.ABOUT);
     const [selectedProducts, setSelectedProducts] = useState<SelectedProducts>(selectedProductsStorage);
 
     const addSelectedProduct: AddSelectedProduct = (productId) => {
@@ -26,28 +22,16 @@ const App = () => {
         localStorage.setItem(SELECTED_PRODUCTS_KEY, JSON.stringify(newSelectedProducts));
     };
 
-    let pageElement;
-
-    switch (currentPage) {
-        case EAppPage.ABOUT: {
-            pageElement = <AboutPage />;
-            break;
-        }
-        case EAppPage.PRODUCTS: {
-            pageElement = <ProductsPage addSelectedProduct={addSelectedProduct} selectedProducts={selectedProducts} />;
-            break;
-        }
-        default: {
-            pageElement = null;
-        }
-    }
-
     return (
-        <ThemeContainer className={styles.app}>
-            <HeaderComponent onPageChange={setCurrentPage} currentPage={currentPage} selectedProducts={selectedProducts} />
-            <main className={styles['app-main']}>{pageElement}</main>
-            <Footer />
-        </ThemeContainer>
+        <Routes>
+            <Route path={APP_LINK_URLS[EAppPage.ROOT]} element={<LayoutComponent selectedProducts={selectedProducts} />}>
+                <Route index element={<AboutPage />} />
+                <Route
+                    path={APP_LINK_URLS[EAppPage.PRODUCTS]}
+                    element={<ProductsPage addSelectedProduct={addSelectedProduct} selectedProducts={selectedProducts} />}
+                />
+            </Route>
+        </Routes>
     );
 };
 
