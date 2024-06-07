@@ -1,0 +1,34 @@
+.product-slider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+
+.product-slider__images {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.product-slider__image {
+  width: 75px;
+  height: 75px;
+}
+
+.product-slider__image img {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+}
+
+.product-slider__main {
+  width: 354px;
+  height: 400px;
+}
+
+.product-slider__main img {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+}

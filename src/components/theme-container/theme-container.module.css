@@ -11,6 +11,8 @@
   --arrowDisabledColor: var(--lightGrey);
   --borderColorCategory: var(--secondaryGrey);
   --textColorCategory: var(--primaryGrey);
+  --backButton: var(--greyHover);
+  --backColorText: var(--darkGrey);
 }
 
 .dark-theme {
@@ -26,4 +28,6 @@
   --arrowDisabledColor: var(--primaryGrey);
   --borderColorCategory: var(--primaryGrey);
   --textColorCategory: var(--primaryWhite);
+  --backButton: var(--primaryGrey);
+  --backColorText: var(--primaryWhite);
 }
