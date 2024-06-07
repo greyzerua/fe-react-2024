@@ -2,7 +2,6 @@ export enum EAppPage {
     BASKET = 'BASKET',
     LOGIN = 'LOGIN',
     SIGNUP = 'SIGNUP',
-    ABOUT = 'ABOUT',
     PRODUCTS = 'PRODUCTS',
     ROOT = 'ROOT',
 }
