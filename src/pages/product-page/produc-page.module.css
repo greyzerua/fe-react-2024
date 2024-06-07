@@ -1,0 +1,20 @@
+.product-page {
+  display: flex;
+  justify-content: center;
+  padding-top: 53px;
+  border: 1px solid var(--borderColor);
+  border-radius: 40px;
+}
+
+.product-page__info-title {
+  font-size: 2rem;
+}
+
+.product-page__info-category {
+  border: 1px solid var(--borderColor);
+  color: var(--textColor);
+  border-radius: 50px;
+  font-size: .87rem;
+  font-weight: 600;
+  padding: 15px 20px;
+}

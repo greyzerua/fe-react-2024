@@ -6,6 +6,7 @@ import { PageNotFound } from './components/page-not-found/page-not-found';
 import { SELECTED_PRODUCTS_KEY } from './config/local-storage-config';
 import { APP_LINK_URLS, EAppPage } from './constants/link-urls';
 import { AboutPage } from './pages/about-page';
+import { ProductPage } from './pages/product-page/product-page';
 import { ProductsPage } from './pages/products-page';
 import type { AddSelectedProduct, SelectedProducts } from './types/selected-products';
 
@@ -31,6 +32,7 @@ const App = () => {
                     path={APP_LINK_URLS[EAppPage.PRODUCTS]}
                     element={<ProductsPage addSelectedProduct={addSelectedProduct} selectedProducts={selectedProducts} />}
                 />
+                <Route path="/product" element={<ProductPage />} />
                 <Route path="*" element={<PageNotFound />} />
             </Route>
         </Routes>
