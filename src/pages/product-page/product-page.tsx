@@ -1,7 +1,7 @@
 import { WidthContainer } from '@/components/width-container';
 import { PRODUCTS } from '@/data/products';
 
-import styles from './produc-page.module.css';
+import styles from './product-page.module.css';
 
 const product = PRODUCTS[0];
 
@@ -13,7 +13,10 @@ export const ProductPage = () => (
                 <span className={styles['product-page__info-category']}>{product.category.name}</span>
                 <p className={styles['product-page__info-desc']}>{product.description}</p>
                 <div className={styles['product-page__price-box']}>
-                    <span className={styles['product-page__price']}>{product.price}</span>
+                    <p className={styles['product-page__price']}>
+                        {product.price}
+                        <span className={styles['product-page__price-currency']}>₴</span>
+                    </p>
                     <button className={styles['product-page__price-btn']}>Add to cart</button>
                 </div>
             </div>
