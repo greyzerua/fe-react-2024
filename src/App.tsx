@@ -32,7 +32,7 @@ const App = () => {
                     path={APP_LINK_URLS[EAppPage.PRODUCTS]}
                     element={<ProductsPage addSelectedProduct={addSelectedProduct} selectedProducts={selectedProducts} />}
                 />
-                <Route path="/product" element={<ProductPage />} />
+                <Route path={APP_LINK_URLS[EAppPage.PRODUCT]} element={<ProductPage />} />
                 <Route path="*" element={<PageNotFound />} />
             </Route>
         </Routes>
