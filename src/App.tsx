@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Route, Routes } from 'react-router-dom';
 
 import { LayoutComponent } from './components/layout-component/layout-component';
+import { PageNotFound } from './components/page-not-found/page-not-found';
 import { SELECTED_PRODUCTS_KEY } from './config/local-storage-config';
 import { APP_LINK_URLS, EAppPage } from './constants/link-urls';
 import { AboutPage } from './pages/about-page';
@@ -30,6 +31,7 @@ const App = () => {
                     path={APP_LINK_URLS[EAppPage.PRODUCTS]}
                     element={<ProductsPage addSelectedProduct={addSelectedProduct} selectedProducts={selectedProducts} />}
                 />
+                <Route path="*" element={<PageNotFound />} />
             </Route>
         </Routes>
     );
