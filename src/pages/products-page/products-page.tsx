@@ -4,8 +4,6 @@ import { WidthContainer } from '@/components/width-container';
 import type { Category } from '@/interfaces/category';
 import type { Product } from '@/interfaces/product';
 
-import type { AddSelectedProduct, SelectedProducts } from '../../types/selected-products';
-
 import ProductCategoryList from './components/products-category-list/products-category-list';
 import { ProductsList } from './components/products-list/products-list';
 import { ProductPagination } from './components/products-pagination/product-pagination';
@@ -17,12 +15,7 @@ import { DEFAULT_PAGE, DEFAULT_PAGE_SIZE, EProductsSort } from './constants';
 
 import styles from './products-page.module.css';
 
-interface Props {
-    addSelectedProduct: AddSelectedProduct;
-    selectedProducts: SelectedProducts;
-}
-
-export const ProductsPage = ({ selectedProducts, addSelectedProduct }: Props) => {
+export const ProductsPage = () => {
     const [categories, setCategories] = useState<Array<Category['id']>>([]);
     const [sortType, setSortType] = useState<EProductsSort>(EProductsSort.PRICE_DESC);
     const [searchValue, setSearchValue] = useState<string>('');
@@ -63,7 +56,7 @@ export const ProductsPage = ({ selectedProducts, addSelectedProduct }: Props) =>
                         </div>
                     </div>
                 </div>
-                <ProductsList products={paginatedProducts} addSelectedProduct={addSelectedProduct} selectedProducts={selectedProducts} />
+                <ProductsList products={paginatedProducts} />
                 <ProductPagination
                     totalCount={filteredProducts.length}
                     pageSize={DEFAULT_PAGE_SIZE}

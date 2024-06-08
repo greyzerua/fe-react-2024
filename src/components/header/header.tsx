@@ -1,7 +1,6 @@
 import headerLogo from '@/assets/logo.svg';
 
 import { EAppPage } from '../../constants/link-urls';
-import type { SelectedProducts } from '../../types/selected-products';
 import { AppLink } from '../app-link';
 import { Auth } from '../auth';
 import { Basket } from '../basket';
@@ -11,11 +10,7 @@ import { WidthContainer } from '../width-container';
 
 import styles from './header.module.css';
 
-interface Props {
-    selectedProducts: SelectedProducts;
-}
-
-export const HeaderComponent = ({ selectedProducts }: Props) => (
+export const HeaderComponent = () => (
     <header className={styles.header}>
         <WidthContainer>
             <div className={styles['header__container']}>
@@ -42,7 +37,7 @@ export const HeaderComponent = ({ selectedProducts }: Props) => (
                         </ul>
                     </nav>
                     <div className={styles['header__basket']}>
-                        <Basket selectedProducts={selectedProducts} />
+                        <Basket />
                     </div>
                     <div className={styles['header__burger']}>
                         <Burger />

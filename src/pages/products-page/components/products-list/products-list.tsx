@@ -1,5 +1,4 @@
 import type { Product } from '@/interfaces/product';
-import type { AddSelectedProduct, SelectedProducts } from '@/types/selected-products';
 
 import { ProductsCard } from '../products-card/products-card';
 
@@ -7,19 +6,12 @@ import styles from './products-list.module.css';
 
 interface Props {
     products: Product[];
-    addSelectedProduct: AddSelectedProduct;
-    selectedProducts: SelectedProducts;
 }
 
-export const ProductsList = ({ products, addSelectedProduct, selectedProducts }: Props) => (
+export const ProductsList = ({ products }: Props) => (
     <div className={styles['products__list']}>
         {products.map((product) => (
-            <ProductsCard
-                key={product.id}
-                product={product}
-                addSelectedProduct={addSelectedProduct}
-                selectedProduct={selectedProducts[product.id]}
-            />
+            <ProductsCard key={product.id} product={product} />
         ))}
     </div>
 );
