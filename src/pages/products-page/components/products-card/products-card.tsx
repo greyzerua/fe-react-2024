@@ -42,7 +42,7 @@ export const ProductsCard = ({ product }: Props) => {
                 </p>
                 <button className={styles['products__card__add-btn']} onClick={addToCard}>
                     <Icon iconType={EIconType.BASKET} stroke={ICON_COLORS.BLACK} />
-                    {productCount && <span className={styles['products__card__count']}>{productCount}</span>}
+                    {productCount ? <span className={styles['products__card__count']}>{productCount}</span> : null}
                 </button>
             </div>
         </div>

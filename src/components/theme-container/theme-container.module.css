@@ -13,6 +13,7 @@
   --textColorCategory: var(--primaryGrey);
   --backButton: var(--greyHover);
   --backColorText: var(--darkGrey);
+  --arrowBorder: var(--greyHover);
 }
 
 .dark-theme {
@@ -30,4 +31,5 @@
   --textColorCategory: var(--primaryWhite);
   --backButton: var(--primaryGrey);
   --backColorText: var(--primaryWhite);
+  --arrowBorder: var(--primaryGrey);
 }
