@@ -2,8 +2,8 @@ export enum EAppPage {
     BASKET = 'BASKET',
     LOGIN = 'LOGIN',
     SIGNUP = 'SIGNUP',
-    ABOUT = 'ABOUT',
     PRODUCTS = 'PRODUCTS',
+    PRODUCT = 'PRODUCT',
     ROOT = 'ROOT',
 }
 
@@ -11,8 +11,8 @@ export const APP_LINK_URLS = {
     [EAppPage.BASKET]: '/basket',
     [EAppPage.LOGIN]: '/login',
     [EAppPage.SIGNUP]: '/sign-up',
-    [EAppPage.ABOUT]: '/about',
     [EAppPage.PRODUCTS]: '/products',
+    [EAppPage.PRODUCT]: '/product/:id',
     [EAppPage.ROOT]: '/',
 };
 

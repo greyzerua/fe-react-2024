@@ -5,6 +5,12 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  cursor: pointer;
+  transition: .2s all ease;
+}
+
+.products__card:hover {
+  background-color: var(--focusInputBackground);
 }
 
 .products__card__img-wrapper {

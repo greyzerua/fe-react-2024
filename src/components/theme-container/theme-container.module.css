@@ -9,6 +9,11 @@
   --focusInputBackground: var(--greyHover);
   --dropdownBackground: var(--primaryWhite);
   --arrowDisabledColor: var(--lightGrey);
+  --borderColorCategory: var(--secondaryGrey);
+  --textColorCategory: var(--primaryGrey);
+  --backButton: var(--greyHover);
+  --backColorText: var(--darkGrey);
+  --arrowBorder: var(--greyHover);
 }
 
 .dark-theme {
@@ -22,4 +27,9 @@
   --focusInputBackground: var(--darkGrey);
   --dropdownBackground: var(--darkGrey);
   --arrowDisabledColor: var(--primaryGrey);
+  --borderColorCategory: var(--primaryGrey);
+  --textColorCategory: var(--primaryWhite);
+  --backButton: var(--primaryGrey);
+  --backColorText: var(--primaryWhite);
+  --arrowBorder: var(--primaryGrey);
 }
