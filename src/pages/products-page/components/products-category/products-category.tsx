@@ -1,5 +1,3 @@
-import { useState } from 'react';
-
 import clsx from 'clsx';
 
 import type { Category } from '@/interfaces/category';
@@ -10,19 +8,17 @@ interface Props {
     name: string;
     id: number;
     onSelectCategory: (id: Category['id']) => void;
+    selectedCategory: Category['id'] | null;
 }
 
-const ProductCategory = ({ name, id, onSelectCategory }: Props) => {
-    const [isActive, setIsActive] = useState<boolean>(false);
-
+const ProductCategory = ({ name, id, selectedCategory, onSelectCategory }: Props) => {
     const toggleActive = () => {
-        setIsActive(!isActive);
         onSelectCategory(id);
     };
 
     return (
         <button
-            className={clsx(styles['product-category__button'], isActive && styles['product-category__button_active'])}
+            className={clsx(styles['product-category__button'], selectedCategory === id && styles['product-category__button_active'])}
             onClick={toggleActive}
         >
             {name}

@@ -10,3 +10,8 @@ export interface Product {
     updatedAt: string;
     category: Category;
 }
+
+export interface ProductsResponse {
+    products: Array<Product>;
+    total: number;
+}
