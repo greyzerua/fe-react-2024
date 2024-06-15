@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useCallback, useEffect, useMemo, useState } from 'react';
 
 import type { Category } from '@/interfaces/category';
 import type { Product, ProductsResponse } from '@/interfaces/product';
@@ -13,6 +13,7 @@ export const useGetProducts = () => {
     const [currentPage, setCurrentPage] = useState<number>(DEFAULT_PAGE);
     const [data, setData] = useState<Array<Product>>([]);
     const [totalCount, setTotalCount] = useState<number | null>(null);
+    const [isLoading, setIsLoading] = useState<boolean>(false);
 
     const queryParameters = useMemo(() => {
         const trimmedTitle = searchValue.trim();
@@ -26,11 +27,13 @@ export const useGetProducts = () => {
         return new URLSearchParams(parameters).toString();
     }, [categories, sortType, searchValue, currentPage]);
 
-    const fetchData = async () => {
+    const fetchData = useCallback(async () => {
+        setIsLoading(true);
         const result = await ApiService.GetInstance().get<ProductsResponse>(`products?${queryParameters}`);
         setData(result.products);
         setTotalCount(result.total);
-    };
+        setIsLoading(false);
+    }, [queryParameters]);
 
     useEffect(() => {
         setCurrentPage(DEFAULT_PAGE);
@@ -38,7 +41,7 @@ export const useGetProducts = () => {
 
     useEffect(() => {
         fetchData();
-    }, [queryParameters]);
+    }, [queryParameters, fetchData]);
 
-    return { data, totalCount, currentPage, setCategories, setSortType, setSearchValue, setCurrentPage, setTotalCount };
+    return { isLoading, data, totalCount, currentPage, setCategories, setSortType, setSearchValue, setCurrentPage, setTotalCount };
 };

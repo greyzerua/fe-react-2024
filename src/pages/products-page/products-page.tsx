@@ -1,5 +1,4 @@
-import { ToastContainer } from 'react-toastify';
-
+import { EIconType, Icon } from '@/components/icons';
 import { WidthContainer } from '@/components/width-container';
 
 import ProductCategoryList from './components/products-category-list/products-category-list';
@@ -10,16 +9,36 @@ import ProductSortDropdown from './components/products-sort-dropdown/products-so
 import { useGetProducts } from './hooks/useGetProducts';
 import { DEFAULT_PAGE_SIZE } from './constants';
 
-import 'react-toastify/ReactToastify.css';
 import styles from './products-page.module.css';
 
 export const ProductsPage = () => {
-    const { setCategories, setSortType, setSearchValue, setCurrentPage, data, totalCount, currentPage } = useGetProducts();
+    const { setCategories, setSortType, setSearchValue, setCurrentPage, data, totalCount, currentPage, isLoading } = useGetProducts();
+
+    const renderProducts = () => {
+        if (isLoading) {
+            return <Icon iconType={EIconType.LOADING} className={styles['products__loading']} />;
+        }
+        if (data.length === 0) {
+            return <h3 className={styles['products__message']}>No products found</h3>;
+        }
+        return (
+            <>
+                <ProductsList products={data} />
+                {totalCount ? (
+                    <ProductPagination
+                        totalCount={totalCount}
+                        pageSize={DEFAULT_PAGE_SIZE}
+                        currentPage={currentPage}
+                        onPageChange={setCurrentPage}
+                    />
+                ) : null}
+            </>
+        );
+    };
 
     return (
         <section className={styles['products']}>
             <WidthContainer className={styles['products__width-container']}>
-                <ToastContainer />
                 <div className={styles['products__filters-container']}>
                     <ProductSearch onSearchChange={setSearchValue} />
                     <div className={styles['products__filters-left']}>
@@ -30,15 +49,7 @@ export const ProductsPage = () => {
                         </div>
                     </div>
                 </div>
-                <ProductsList products={data} />
-                {totalCount ? (
-                    <ProductPagination
-                        totalCount={totalCount}
-                        pageSize={DEFAULT_PAGE_SIZE}
-                        currentPage={currentPage}
-                        onPageChange={setCurrentPage}
-                    />
-                ) : null}
+                <div className={styles['products__list-container']}>{renderProducts()}</div>
             </WidthContainer>
         </section>
     );

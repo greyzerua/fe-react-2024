@@ -5,6 +5,7 @@ import { CloseIcon } from './close-icon';
 import { FacebookIcon } from './facebook-icon';
 import { InstagramIcon } from './instagram-icon';
 import { LinkedinIcon } from './linkedin-icon';
+import { LoadingIcon } from './loading-icon';
 import { LoginIcon } from './login-icon';
 import { MoonIcon } from './moon-icon';
 import { SearchIcon } from './search-icon';
@@ -23,6 +24,7 @@ export enum EIconType {
     ARROW_UP,
     ARROW_DOWN,
     CLOSE,
+    LOADING,
 }
 
 export const Icons = {
@@ -38,6 +40,7 @@ export const Icons = {
     [EIconType.ARROW_UP]: ArrowUpIcon,
     [EIconType.ARROW_DOWN]: ArrowDownIcon,
     [EIconType.CLOSE]: CloseIcon,
+    [EIconType.LOADING]: LoadingIcon,
 };
 
 export const ICON_COLORS = {
