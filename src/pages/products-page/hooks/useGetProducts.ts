@@ -4,7 +4,8 @@ import type { Category } from '@/interfaces/category';
 import type { Product, ProductsResponse } from '@/interfaces/product';
 import { ApiService } from '@/services/axios-services';
 
-import { DEFAULT_PAGE, DEFAULT_PAGE_SIZE, EProductsSort, PRODUCTS_SORTING } from '../constants';
+import { DEFAULT_PAGE, DEFAULT_PAGE_SIZE, EProductsSort, INFINITE_SCROLL_WINDOW_WIDTH, PRODUCTS_SORTING } from '../constants';
+import { concatProducts } from '../utils/concat-products';
 
 export const useGetProducts = () => {
     const [categories, setCategories] = useState<Category['id'] | null>(null);
@@ -14,6 +15,19 @@ export const useGetProducts = () => {
     const [data, setData] = useState<Array<Product>>([]);
     const [totalCount, setTotalCount] = useState<number | null>(null);
     const [isLoading, setIsLoading] = useState<boolean>(false);
+    const [isInfinite, setIsInfinite] = useState<boolean>(window.innerWidth <= INFINITE_SCROLL_WINDOW_WIDTH);
+
+    const checkIsInfinite = () => {
+        setIsInfinite(window.innerWidth <= INFINITE_SCROLL_WINDOW_WIDTH);
+    };
+
+    useEffect(() => {
+        checkIsInfinite();
+        window.addEventListener('resize', checkIsInfinite);
+        return () => {
+            window.removeEventListener('resize', checkIsInfinite);
+        };
+    }, []);
 
     const queryParameters = useMemo(() => {
         const trimmedTitle = searchValue.trim();
@@ -29,11 +43,12 @@ export const useGetProducts = () => {
 
     const fetchData = useCallback(async () => {
         setIsLoading(true);
+        const isFirstPage = queryParameters.includes('offset=0');
         const result = await ApiService.GetInstance().get<ProductsResponse>(`products?${queryParameters}`);
-        setData(result.products);
+        setData((previousData) => (isInfinite && !isFirstPage ? concatProducts(previousData, result.products) : result.products));
         setTotalCount(result.total);
         setIsLoading(false);
-    }, [queryParameters]);
+    }, [queryParameters, isInfinite]);
 
     useEffect(() => {
         setCurrentPage(DEFAULT_PAGE);
@@ -41,7 +56,23 @@ export const useGetProducts = () => {
 
     useEffect(() => {
         fetchData();
-    }, [queryParameters, fetchData]);
+    }, [fetchData]);
 
-    return { isLoading, data, totalCount, currentPage, setCategories, setSortType, setSearchValue, setCurrentPage, setTotalCount };
+    const loadMore = () => {
+        setCurrentPage((previousCurrentPage) => ++previousCurrentPage);
+    };
+
+    return {
+        isInfinite,
+        isLoading,
+        data,
+        totalCount,
+        currentPage,
+        setCategories,
+        setSortType,
+        setSearchValue,
+        setCurrentPage,
+        setTotalCount,
+        loadMore,
+    };
 };

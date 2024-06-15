@@ -1,3 +1,5 @@
+import InfiniteScroll from 'react-infinite-scroll-component';
+
 import { EIconType, Icon } from '@/components/icons';
 import { WidthContainer } from '@/components/width-container';
 
@@ -12,9 +14,22 @@ import { DEFAULT_PAGE_SIZE } from './constants';
 import styles from './products-page.module.css';
 
 export const ProductsPage = () => {
-    const { setCategories, setSortType, setSearchValue, setCurrentPage, data, totalCount, currentPage, isLoading } = useGetProducts();
+    const { setCategories, setSortType, setSearchValue, setCurrentPage, loadMore, data, totalCount, currentPage, isLoading, isInfinite } =
+        useGetProducts();
 
     const renderProducts = () => {
+        if (isInfinite) {
+            return (
+                <InfiniteScroll
+                    dataLength={data.length}
+                    next={loadMore}
+                    hasMore={totalCount === null ? true : data.length < totalCount}
+                    loader={<Icon iconType={EIconType.LOADING} width={70} height={70} className={styles['products__loading']} />}
+                >
+                    <ProductsList products={data} />
+                </InfiniteScroll>
+            );
+        }
         if (isLoading) {
             return <Icon iconType={EIconType.LOADING} className={styles['products__loading']} />;
         }

@@ -35,3 +35,5 @@ export const DEFAULT_PAGE_SIZE = 8;
 export const DEFAULT_PAGE = 1;
 
 export const DOTS = 'DOTS';
+
+export const INFINITE_SCROLL_WINDOW_WIDTH = 580;
