@@ -1,6 +1,16 @@
 .products-category-list {
   display: flex;
+  flex-wrap: wrap;
   gap: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (max-width: 1040px) {
+
+  .products-category-list {
+    justify-content: normal;
+  }
 }
 
 @media (max-width: 680px) {
