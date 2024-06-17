@@ -8,12 +8,14 @@ import { ProductsList } from './components/products-list/products-list';
 import { ProductPagination } from './components/products-pagination/product-pagination';
 import ProductSearch from './components/products-search/product-search';
 import ProductSortDropdown from './components/products-sort-dropdown/products-sort-dropdown';
+import { useGetCategories } from './hooks/useGetCategories';
 import { useGetProducts } from './hooks/useGetProducts';
 import { DEFAULT_PAGE_SIZE } from './constants';
 
 import styles from './products-page.module.css';
 
 export const ProductsPage = () => {
+    const { categories } = useGetCategories();
     const { setCategories, setSortType, setSearchValue, setCurrentPage, loadMore, data, totalCount, currentPage, isLoading, isInfinite } =
         useGetProducts();
 
@@ -57,7 +59,7 @@ export const ProductsPage = () => {
                 <div className={styles['products__filters-container']}>
                     <ProductSearch onSearchChange={setSearchValue} />
                     <div className={styles['products__filters-left']}>
-                        <ProductCategoryList onCategoriesChange={setCategories} />
+                        <ProductCategoryList categories={categories} onCategoriesChange={setCategories} />
                         <div className={styles['products__dropdown-wrap']}>
                             <p className={styles['products__dropdown-text']}>Sort by:</p>
                             <ProductSortDropdown onSortingChange={setSortType} />

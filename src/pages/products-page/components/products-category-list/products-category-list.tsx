@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 
-import { CATEGORIES } from '@/data/categories';
 import type { Category } from '@/interfaces/category';
 
 import ProductCategory from '../products-category/products-category';
@@ -8,10 +7,11 @@ import ProductCategory from '../products-category/products-category';
 import styles from './products-category-list.module.css';
 
 interface Props {
+    categories: Array<Category>;
     onCategoriesChange: (categories: Category['id'] | null) => void;
 }
 
-const ProductCategoryList = ({ onCategoriesChange }: Props) => {
+const ProductCategoryList = ({ onCategoriesChange, categories }: Props) => {
     const [selectedCategory, setSelectedCategory] = useState<Category['id'] | null>(null);
 
     useEffect(() => {
@@ -24,7 +24,7 @@ const ProductCategoryList = ({ onCategoriesChange }: Props) => {
 
     return (
         <div className={styles['products-category-list']}>
-            {CATEGORIES.map((category) => (
+            {categories.map((category) => (
                 <ProductCategory
                     key={category.id}
                     id={category.id}
