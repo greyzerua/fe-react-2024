@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 
 import type { Product } from '@/interfaces/product';
 import { ApiService } from '@/services/axios-services';
+import { EHttpStatusCode } from '@/services/http-status-code';
 
 export const useProduct = (id?: number) => {
     const navigate = useNavigate();
@@ -15,7 +16,7 @@ export const useProduct = (id?: number) => {
                 setProduct(result);
             } catch (error: unknown) {
                 const axiosError = ApiService.IsAxiosError(error);
-                if (axiosError?.response?.status === 400) {
+                if (axiosError?.response?.status === EHttpStatusCode.BAD_REQUEST) {
                     navigate('*');
                 }
             }

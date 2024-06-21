@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
 
+import { useCheckMobile } from '@/hooks/useCheckMobile';
 import type { Category } from '@/interfaces/category';
 import type { Product, ProductsResponse } from '@/interfaces/product';
 import { ApiService } from '@/services/axios-services';
@@ -15,25 +16,14 @@ export const useGetProducts = () => {
     const [data, setData] = useState<Array<Product>>([]);
     const [totalCount, setTotalCount] = useState<number | null>(null);
     const [isLoading, setIsLoading] = useState<boolean>(false);
-    const [isInfinite, setIsInfinite] = useState<boolean>(window.innerWidth <= INFINITE_SCROLL_WINDOW_WIDTH);
 
-    const checkIsInfinite = () => {
-        setIsInfinite(window.innerWidth <= INFINITE_SCROLL_WINDOW_WIDTH);
-    };
-
-    useEffect(() => {
-        checkIsInfinite();
-        window.addEventListener('resize', checkIsInfinite);
-        return () => {
-            window.removeEventListener('resize', checkIsInfinite);
-        };
-    }, []);
+    const { isMobile: isInfinite } = useCheckMobile({ breakpoint: INFINITE_SCROLL_WINDOW_WIDTH });
 
     const queryParameters = useMemo(() => {
         const trimmedTitle = searchValue.trim();
         const parameters = {
             ...(categories === null ? {} : { categoryId: String(categories) }),
-            ...(trimmedTitle.length > 0 ? { title: trimmedTitle } : {}),
+            ...(trimmedTitle ? { title: trimmedTitle } : {}),
             sortOrder: PRODUCTS_SORTING[sortType].type,
             limit: String(DEFAULT_PAGE_SIZE),
             offset: String(currentPage === DEFAULT_PAGE ? 0 : (currentPage - 1) * DEFAULT_PAGE_SIZE),
