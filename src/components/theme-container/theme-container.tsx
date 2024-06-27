@@ -1,8 +1,8 @@
 import type { ComponentProps } from 'react';
-import { useEffect, useState } from 'react';
+import { useSelector } from 'react-redux';
 
-import { ETheme, THEME_UPDATE_EVENT } from '@/constants/themes';
-import { getDefaultTheme } from '@/utils/get-default-theme';
+import { ETheme } from '@/constants/themes';
+import { selectTheme } from '@/redux/theme/slice';
 
 import styles from './theme-container.module.css';
 
@@ -12,18 +12,6 @@ export const THEME_CLASSES = {
 };
 
 export const ThemeContainer = ({ className, children }: ComponentProps<'div'>) => {
-    const [currentTheme, setCurrentTheme] = useState<ETheme>(getDefaultTheme());
-
-    const updateCurrentTheme = () => {
-        setCurrentTheme(getDefaultTheme());
-    };
-
-    useEffect(() => {
-        window.addEventListener(THEME_UPDATE_EVENT, updateCurrentTheme);
-        return () => {
-            window.removeEventListener(THEME_UPDATE_EVENT, updateCurrentTheme);
-        };
-    }, []);
-
+    const currentTheme = useSelector(selectTheme);
     return <div className={`${THEME_CLASSES[currentTheme]} ${className}`}>{children}</div>;
 };

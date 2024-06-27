@@ -1,11 +1,12 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 
 import clsx from 'clsx';
 
 import { THEME_KEY } from '@/config/local-storage-config';
-import { getDefaultTheme } from '@/utils/get-default-theme';
+import { selectTheme, setTheme } from '@/redux/theme/slice';
 
-import { ETheme, THEME_UPDATE_EVENT } from '../../constants/themes';
+import { ETheme } from '../../constants/themes';
 import { EIconType, Icon } from '../icons';
 
 import styles from './theme-switcher.module.css';
@@ -14,19 +15,19 @@ const getClassName = (isCurrentTheme: boolean) =>
     clsx(styles['theme-switcher__button'], isCurrentTheme && styles['theme-switcher__button_active']);
 
 export const ThemeSwitcher = () => {
-    const [currentTheme, setCurrentTheme] = useState<ETheme>(getDefaultTheme());
+    const dispatch = useDispatch();
+    const currentTheme = useSelector(selectTheme);
 
     useEffect(() => {
         localStorage.setItem(THEME_KEY, currentTheme);
-        window.dispatchEvent(new Event(THEME_UPDATE_EVENT));
     }, [currentTheme]);
 
     const onLightClick = () => {
-        setCurrentTheme(ETheme.LIGHT);
+        dispatch(setTheme(ETheme.LIGHT));
     };
 
     const onDarkClick = () => {
-        setCurrentTheme(ETheme.DARK);
+        dispatch(setTheme(ETheme.DARK));
     };
 
     return (
