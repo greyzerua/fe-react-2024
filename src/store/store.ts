@@ -4,6 +4,7 @@ import categories from './categories/slice';
 import pagination from './pagination/slice';
 import product from './product-details/slice';
 import products from './products/slice';
+import filter from './products-filter/slice';
 import theme from './theme/slice';
 
 export const store = configureStore({
@@ -13,6 +14,7 @@ export const store = configureStore({
         products,
         product,
         categories,
+        filter,
     },
 });
 
