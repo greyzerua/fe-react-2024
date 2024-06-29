@@ -1,27 +1,31 @@
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 
-import type { Product } from '@/interfaces/product';
-import { ApiService } from '@/services/axios-services';
 import { EHttpStatusCode } from '@/services/http-status-code';
+import { selectProduct } from '@/store/product-details/slice';
+import { fetchProduct } from '@/store/product-details/thunks';
+import type { AppDispatch } from '@/store/store';
+import type { RejectedThunk } from '@/store/typedef';
 
 export const useProduct = (id?: number) => {
+    const dispatch = useDispatch<AppDispatch>();
     const navigate = useNavigate();
-    const [product, setProduct] = useState<Product | null>(null);
+
+    const product = useSelector(selectProduct);
 
     const getProduct = useCallback(
         async (productId: number) => {
             try {
-                const result = await ApiService.GetInstance().get<Product>(`products/${productId}`);
-                setProduct(result);
+                await dispatch(fetchProduct({ productId })).unwrap();
             } catch (error: unknown) {
-                const axiosError = ApiService.IsAxiosError(error);
-                if (axiosError?.response?.status === EHttpStatusCode.BAD_REQUEST) {
+                const thunkError = error as RejectedThunk;
+                if (thunkError?.statusCode === EHttpStatusCode.BAD_REQUEST) {
                     navigate('*');
                 }
             }
         },
-        [setProduct, navigate],
+        [navigate, dispatch],
     );
 
     useEffect(() => {

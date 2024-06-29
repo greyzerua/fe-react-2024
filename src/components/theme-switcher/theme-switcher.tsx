@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import clsx from 'clsx';
 
 import { THEME_KEY } from '@/config/local-storage-config';
-import { selectTheme, setTheme } from '@/redux/theme/slice';
+import { selectTheme, setTheme } from '@/store/theme/slice';
 
 import { ETheme } from '../../constants/themes';
 import { EIconType, Icon } from '../icons';

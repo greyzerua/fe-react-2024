@@ -1,21 +1,25 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 
 import { useCheckMobile } from '@/hooks/useCheckMobile';
 import type { Category } from '@/interfaces/category';
-import type { Product, ProductsResponse } from '@/interfaces/product';
-import { ApiService } from '@/services/axios-services';
+import { selectIsLoading, selectProducts, selectTotal } from '@/store/products/slice';
+import { fetchProducts } from '@/store/products/thunks';
+import type { AppDispatch } from '@/store/store';
 
 import { DEFAULT_PAGE, DEFAULT_PAGE_SIZE, EProductsSort, INFINITE_SCROLL_WINDOW_WIDTH, PRODUCTS_SORTING } from '../constants';
-import { concatProducts } from '../utils/concat-products';
 
 export const useGetProducts = () => {
+    const dispatch = useDispatch<AppDispatch>();
+
     const [categories, setCategories] = useState<Category['id'] | null>(null);
     const [sortType, setSortType] = useState<EProductsSort>(EProductsSort.PRICE_DESC);
     const [searchValue, setSearchValue] = useState<string>('');
     const [currentPage, setCurrentPage] = useState<number>(DEFAULT_PAGE);
-    const [data, setData] = useState<Array<Product>>([]);
-    const [totalCount, setTotalCount] = useState<number | null>(null);
-    const [isLoading, setIsLoading] = useState<boolean>(false);
+
+    const data = useSelector(selectProducts);
+    const totalCount = useSelector(selectTotal);
+    const isLoading = useSelector(selectIsLoading);
 
     const { isMobile: isInfinite } = useCheckMobile({ breakpoint: INFINITE_SCROLL_WINDOW_WIDTH });
 
@@ -31,14 +35,10 @@ export const useGetProducts = () => {
         return new URLSearchParams(parameters).toString();
     }, [categories, sortType, searchValue, currentPage]);
 
-    const fetchData = useCallback(async () => {
-        setIsLoading(true);
+    const fetchData = useCallback(() => {
         const isFirstPage = queryParameters.includes('offset=0');
-        const result = await ApiService.GetInstance().get<ProductsResponse>(`products?${queryParameters}`);
-        setData((previousData) => (isInfinite && !isFirstPage ? concatProducts(previousData, result.products) : result.products));
-        setTotalCount(result.total);
-        setIsLoading(false);
-    }, [queryParameters, isInfinite]);
+        dispatch(fetchProducts({ queryParameters, shouldConcat: isInfinite && !isFirstPage }));
+    }, [queryParameters, isInfinite, dispatch]);
 
     useEffect(() => {
         setCurrentPage(DEFAULT_PAGE);
@@ -62,7 +62,6 @@ export const useGetProducts = () => {
         setSortType,
         setSearchValue,
         setCurrentPage,
-        setTotalCount,
         loadMore,
     };
 };

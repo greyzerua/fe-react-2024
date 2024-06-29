@@ -2,7 +2,7 @@ import type { ComponentProps } from 'react';
 import { useSelector } from 'react-redux';
 
 import { ETheme } from '@/constants/themes';
-import { selectTheme } from '@/redux/theme/slice';
+import { selectTheme } from '@/store/theme/slice';
 
 import styles from './theme-container.module.css';
 
