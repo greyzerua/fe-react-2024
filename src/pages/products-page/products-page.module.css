@@ -15,7 +15,6 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 53px;
 }
 
 .products__list-container {
@@ -55,6 +54,17 @@
   color: var(--textColor);
 }
 
+.products__counts {
+  display: flex;
+  flex-direction: column;
+  margin: 10px 0 33px;
+}
+
+.products__count {
+  font-size: 16px;
+  color: var(--textColor);
+}
+
 @media (max-width: 1040px) {
 
   .products {
@@ -64,7 +74,10 @@
   .products__filters-container {
     flex-direction: column;
     gap: 15px;
-    margin-bottom: 30px;
+  }
+
+  .products__counts {
+    margin: 7px 0 30px;
   }
 
   .products__filters-left {
