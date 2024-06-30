@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useCheckMobile } from '@/hooks/useCheckMobile';
 import type { Category } from '@/interfaces/category';
 import { selectPagination, setLoadMore, setPagination } from '@/store/pagination/slice';
-import { selectIsLoading, selectProducts, selectTotal } from '@/store/products/slice';
+import { selectFilteredTotal, selectIsLoading, selectProducts, selectTotal } from '@/store/products/slice';
 import { fetchProducts } from '@/store/products/thunks';
 import { selectFilter, setCategory, setSearchValue, setSortType } from '@/store/products-filter/slice';
 import type { AppDispatch } from '@/store/store';
@@ -20,6 +20,7 @@ export const useGetProducts = () => {
 
     const data = useSelector(selectProducts);
     const totalCount = useSelector(selectTotal);
+    const filteredTotalCount = useSelector(selectFilteredTotal);
     const isLoading = useSelector(selectIsLoading);
 
     const { isMobile: isInfinite } = useCheckMobile({ breakpoint: INFINITE_SCROLL_WINDOW_WIDTH });
@@ -70,6 +71,8 @@ export const useGetProducts = () => {
         isLoading,
         data,
         totalCount,
+        filteredTotalCount,
+        paginationTotalCount: filteredTotalCount || totalCount,
         currentPage,
         setCategories: onChangeCategories,
         setSortType: onChangeSortType,

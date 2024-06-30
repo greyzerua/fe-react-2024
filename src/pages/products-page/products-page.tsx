@@ -16,8 +16,20 @@ import styles from './products-page.module.css';
 
 export const ProductsPage = () => {
     const { categories } = useGetCategories();
-    const { setCategories, setSortType, setSearchValue, setCurrentPage, loadMore, data, totalCount, currentPage, isLoading, isInfinite } =
-        useGetProducts();
+    const {
+        setCategories,
+        setSortType,
+        setSearchValue,
+        setCurrentPage,
+        loadMore,
+        data,
+        totalCount,
+        filteredTotalCount,
+        paginationTotalCount,
+        currentPage,
+        isLoading,
+        isInfinite,
+    } = useGetProducts();
 
     const renderProducts = () => {
         if (isInfinite) {
@@ -25,7 +37,7 @@ export const ProductsPage = () => {
                 <InfiniteScroll
                     dataLength={data.length}
                     next={loadMore}
-                    hasMore={totalCount === null ? true : data.length < totalCount}
+                    hasMore={paginationTotalCount === null ? true : data.length < paginationTotalCount}
                     loader={<Icon iconType={EIconType.LOADING} width={70} height={70} className={styles['products__loading']} />}
                 >
                     <ProductsList products={data} />
@@ -41,9 +53,9 @@ export const ProductsPage = () => {
         return (
             <>
                 <ProductsList products={data} />
-                {totalCount ? (
+                {paginationTotalCount ? (
                     <ProductPagination
-                        totalCount={totalCount}
+                        totalCount={paginationTotalCount}
                         pageSize={DEFAULT_PAGE_SIZE}
                         currentPage={currentPage}
                         onPageChange={setCurrentPage}
@@ -65,6 +77,12 @@ export const ProductsPage = () => {
                             <ProductSortDropdown onSortingChange={setSortType} />
                         </div>
                     </div>
+                </div>
+                <div className={styles['products__counts']}>
+                    <span className={styles['products__count']}>Total amount of products: {totalCount}</span>
+                    {filteredTotalCount && (
+                        <span className={styles['products__count']}>Filtered amount of products: {filteredTotalCount}</span>
+                    )}
                 </div>
                 <div className={styles['products__list-container']}>{renderProducts()}</div>
             </WidthContainer>
