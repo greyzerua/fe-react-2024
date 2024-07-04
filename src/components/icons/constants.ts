@@ -2,6 +2,8 @@ import { ArrowDownIcon } from './arrow-down-icon';
 import { ArrowUpIcon } from './arrow-up-icon';
 import { BasketIcon } from './basket-icon';
 import { CloseIcon } from './close-icon';
+import { EyeIcon } from './eye';
+import { EyeCrossedIcon } from './eye-crossed';
 import { FacebookIcon } from './facebook-icon';
 import { InstagramIcon } from './instagram-icon';
 import { LinkedinIcon } from './linkedin-icon';
@@ -25,6 +27,8 @@ export enum EIconType {
     ARROW_DOWN,
     CLOSE,
     LOADING,
+    EYE,
+    EYE_CROSSED,
 }
 
 export const Icons = {
@@ -41,6 +45,8 @@ export const Icons = {
     [EIconType.ARROW_DOWN]: ArrowDownIcon,
     [EIconType.CLOSE]: CloseIcon,
     [EIconType.LOADING]: LoadingIcon,
+    [EIconType.EYE]: EyeIcon,
+    [EIconType.EYE_CROSSED]: EyeCrossedIcon,
 };
 
 export const ICON_COLORS = {
