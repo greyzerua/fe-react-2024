@@ -111,3 +111,36 @@
 .login__auth_button-sign-up:hover {
   background-color: var(--primaryButtonHoverColor);
 }
+
+@media (max-width: 900px) {
+
+  .login__form {
+    max-width: 68%;
+  }
+}
+
+@media (max-width: 713px) {
+
+  .login__form {
+    max-width: 88%;
+  }
+}
+
+@media (max-width: 550px) {
+
+  .login {
+    margin: 30px auto;
+    border: unset;
+    max-width: 100%;
+    padding: unset;
+  }
+
+  .login__form {
+    max-width: 100%;
+  }
+
+  .login__title {
+    font-weight: 600;
+    font-size: 1.68rem;
+  }
+}

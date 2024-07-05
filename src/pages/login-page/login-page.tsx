@@ -23,7 +23,7 @@ export const LoginPage = () => {
                 <form className={styles['login__form']}>
                     <h2 className={styles['login__title']}>Login</h2>
                     <div className={styles['login__form_inner']}>
-                        <input type="email" className={styles['login__form_input']} placeholder="Email" />
+                        <input type="email" className={styles['login__form_input']} placeholder="Email address" />
                         <div className={styles['login__form_input_wrap']}>
                             <input
                                 ref={inputReference}
