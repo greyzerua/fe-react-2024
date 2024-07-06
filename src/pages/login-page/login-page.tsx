@@ -1,3 +1,4 @@
+import type { FormEvent } from 'react';
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
@@ -60,8 +61,8 @@ export const LoginPage = () => {
         setError('password', AUTH_ERROR);
     };
 
-    const onLoginSubmit = () => {
-        handleSubmit(onSubmit);
+    const onLoginSubmit = (event: FormEvent) => {
+        handleSubmit(onSubmit)(event);
     };
 
     const toggleShownPassword = () => {
@@ -71,6 +72,7 @@ export const LoginPage = () => {
 
     const passwordClass = clsx(
         styles['login__form_input'],
+        styles['login__form_input_password'],
         isShownPassword && styles['shown-password'],
         passwordError && styles['login__form_input-error'],
     );
@@ -78,7 +80,7 @@ export const LoginPage = () => {
     return (
         <WidthContainer>
             <section className={styles.login}>
-                <form className={styles['login__form']}>
+                <form className={styles['login__form']} onSubmit={onLoginSubmit}>
                     <h2 className={styles['login__title']}>Login</h2>
                     <div className={styles['login__form_inner']}>
                         <input
@@ -96,7 +98,7 @@ export const LoginPage = () => {
                                 className={passwordClass}
                                 placeholder="Password"
                             />
-                            <button className={styles['login__form_input_btn']} onClick={toggleShownPassword}>
+                            <button type="button" className={styles['login__form_input_btn']} onClick={toggleShownPassword}>
                                 <Icon iconType={isShownPassword ? EIconType.EYE_CROSSED : EIconType.EYE} />
                             </button>
                         </div>
@@ -108,7 +110,6 @@ export const LoginPage = () => {
                             type="submit"
                             className={`${styles['login__auth_button']} ${styles['login__auth_button-login']}`}
                             disabled={!isValid}
-                            onClick={onLoginSubmit}
                         >
                             <Icon iconType={EIconType.LOGIN} stroke={isValid ? ICON_COLORS.DEFAULT : ICON_COLORS.DISABLED} />
                             Login

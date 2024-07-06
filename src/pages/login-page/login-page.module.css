@@ -39,6 +39,10 @@
   transition: .2s all ease;
 }
 
+.login__form_input_password {
+  padding-right: 42px;
+}
+
 .login__form_input::placeholder {
   color: var(--loginInput);
   font-family: "Montserrat";
