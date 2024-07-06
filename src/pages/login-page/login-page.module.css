@@ -71,6 +71,15 @@
   font-weight: 600;
 }
 
+.login__form_input-error {
+  border: 1px solid var(--secondaryButtonHoverColor);
+}
+
+.login__form_error-text {
+  color: var(--secondaryButtonHoverColor);
+  font-size: 13px;
+}
+
 .login__auth {
   display: flex;
   flex-direction: column;
@@ -94,12 +103,18 @@
   transition: .2s all;
 }
 
+.login__auth_button:disabled {
+  background-color: transparent;
+  border: 1px solid var(--arrowDisabledColor);
+  color: var(--arrowDisabledColor);
+}
+
 .login__auth_button-login {
   color: var(--primaryWhite);
   background-color: var(--secondaryButtonColor);
 }
 
-.login__auth_button-login:hover {
+.login__auth_button-login:not(:disabled):hover {
   background-color: var(--secondaryButtonHoverColor);
 }
 

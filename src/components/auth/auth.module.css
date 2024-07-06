@@ -15,11 +15,14 @@
   transition: .2s all;
 }
 
-.auth-buttons__button_login {
+.auth-buttons__button_login,
+.auth-buttons__button_logout {
+  color: var(--primaryWhite);
   background-color: var(--darkGrey);
 }
 
-.auth-buttons__button_login:hover {
+.auth-buttons__button_login,
+.auth-buttons__button_logout:hover {
   background-color: var(--primaryButtonHoverColor);
 }
 

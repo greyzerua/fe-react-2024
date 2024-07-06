@@ -14,6 +14,10 @@ interface Props {
 export const ProductCardInfo = ({ product }: Props) => {
     const { productCount, addSelectedProduct } = useAddToCart(product.id);
 
+    const addProduct = () => {
+        addSelectedProduct();
+    };
+
     return (
         <div className={styles['product-page__wrapper']}>
             <ProductSlider images={product.images} />
@@ -31,7 +35,7 @@ export const ProductCardInfo = ({ product }: Props) => {
                         <span className={styles['product-page__price-currency']}>₴</span>
                     </p>
                     <BackButton className={styles['product-page__back']} />
-                    <button className={styles['product-page__add-btn']} onClick={addSelectedProduct}>
+                    <button className={styles['product-page__add-btn']} onClick={addProduct}>
                         <Icon iconType={EIconType.BASKET} />
                         Add to cart ({productCount})
                     </button>
