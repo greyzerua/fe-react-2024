@@ -65,6 +65,23 @@ button {
   background-color: transparent;
 }
 
+input {
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  padding-block: unset;
+  background-color: transparent;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  transition: background-color 9999s ease-in-out 0s;
+  caret-color: var(--loginInput);
+  -webkit-text-fill-color: var(--loginInput) !important;
+}
+
 .bold-hover {
   position: relative;
   transition: .2s ease all;

@@ -14,6 +14,7 @@
   --backButton: var(--greyHover);
   --backColorText: var(--darkGrey);
   --arrowBorder: var(--greyHover);
+  --loginInput: var(--primaryGrey);
 }
 
 .dark-theme {
@@ -32,4 +33,5 @@
   --backButton: var(--primaryGrey);
   --backColorText: var(--primaryWhite);
   --arrowBorder: var(--primaryGrey);
+  --loginInput: var(--lightGrey);
 }

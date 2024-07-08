@@ -1,5 +1,6 @@
 import { configureStore } from '@reduxjs/toolkit';
 
+import auth from './auth/slice';
 import categories from './categories/slice';
 import pagination from './pagination/slice';
 import product from './product-details/slice';
@@ -15,6 +16,7 @@ export const store = configureStore({
         product,
         categories,
         filter,
+        auth,
     },
 });
 
