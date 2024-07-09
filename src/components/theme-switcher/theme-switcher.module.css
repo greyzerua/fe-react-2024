@@ -36,6 +36,14 @@
 @media (max-width: 800px) {
 
   .theme-switcher {
-    display: none;
+    margin-top: 20px;
+  }
+
+  .theme-switcher__button_active path {
+    stroke: var(--themeSwitcher);
+  }
+
+  .theme-switcher__button:hover path {
+    stroke: var(--iconColor);
   }
 }

@@ -1,3 +1,4 @@
+import type { ComponentProps } from 'react';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
@@ -14,7 +15,11 @@ import styles from './theme-switcher.module.css';
 const getClassName = (isCurrentTheme: boolean) =>
     clsx(styles['theme-switcher__button'], isCurrentTheme && styles['theme-switcher__button_active']);
 
-export const ThemeSwitcher = () => {
+type Props = ComponentProps<'div'> & {
+    stroke?: string;
+};
+
+export const ThemeSwitcher = ({ className = '', stroke }: Props) => {
     const dispatch = useDispatch();
     const currentTheme = useSelector(selectTheme);
 
@@ -31,7 +36,7 @@ export const ThemeSwitcher = () => {
     };
 
     return (
-        <div className={styles['theme-switcher']}>
+        <div className={`${styles['theme-switcher']} ${className}`}>
             <button className={getClassName(currentTheme === ETheme.LIGHT)} onClick={onLightClick}>
                 <Icon iconType={EIconType.SUN} />
             </button>

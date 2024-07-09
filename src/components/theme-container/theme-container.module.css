@@ -1,6 +1,6 @@
 .light-theme {
   --iconColor: var(--primaryBlack);
-  --bgColor: var(--backgroundLight);
+  --bgColor: var(--primaryWhite);
   --textColor: var(--primaryBlack);
   --borderColor: var(--lightGrey);
   --filterColor: var(--primaryGrey);
@@ -15,6 +15,7 @@
   --backColorText: var(--darkGrey);
   --arrowBorder: var(--greyHover);
   --loginInput: var(--primaryGrey);
+  --themeSwitcher: var(--primaryBlack);
 }
 
 .dark-theme {
@@ -34,4 +35,5 @@
   --backColorText: var(--primaryWhite);
   --arrowBorder: var(--primaryGrey);
   --loginInput: var(--lightGrey);
+  --themeSwitcher: var(--primaryWhite);
 }

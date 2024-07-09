@@ -86,7 +86,7 @@ export const LoginPage = () => {
                         <input
                             {...register('email', EMAIL_VALIDATION)}
                             type="text"
-                            className={clsx(styles['login__form_input'], emailError && styles['login__form_input-error'])}
+                            className={clsx(styles['login__form_input'], emailError && styles['burger_active'])}
                             placeholder="Email address"
                         />
                         {emailError && <span className={styles['login__form_error-text']}>{emailError}</span>}

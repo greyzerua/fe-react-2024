@@ -17,7 +17,7 @@
   border: 1px solid var(--filterBorder);
   transition: background-color .3s ease, color .3s ease;
   font-size: .87rem;
-  z-index: 2;
+  z-index: 1;
 }
 
 .products-sort-dropdown__arrow {
@@ -35,7 +35,7 @@
   width: 100%;
   background-color: var(--dropdownBackground);
   border: 1px solid var(--filterBorder);
-  z-index: 1;
+  z-index: 0;
   transition: .3s all ease;
   font-size: .87rem;
   transform: translateY(-40px);

@@ -18,7 +18,7 @@ export const HeaderComponent = () => (
                     <AppLink page={EAppPage.ROOT} className={styles['header__logo']}>
                         <img src={headerLogo} alt="logo" />
                     </AppLink>
-                    <ThemeSwitcher />
+                    <ThemeSwitcher className={styles['header__theme-switcher']} />
                 </div>
 
                 <div className={styles['header__inner_right']}>

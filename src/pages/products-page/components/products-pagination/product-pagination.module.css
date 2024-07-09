@@ -41,7 +41,7 @@
   color: var(--arrowDisabledColor);
 }
 
-.products-pagination__button:not(:disabled):hover {
+.products-pagination__button:not(:disabled, .products-pagination__button_active):hover {
   background-color: var(--secondaryButtonHoverColor);
   color: var(--primaryWhite);
 }
