@@ -30,6 +30,7 @@
   justify-content: space-between;
   flex-direction: column;
   position: fixed;
+  overflow: scroll;
   top: 64px;
   left: 0;
   height: calc(100% - 64px);
@@ -51,7 +52,7 @@
 
 .menu__list {
   display: flex;
-  padding-top: 159px;
+  padding: 159px 0 50px;
   align-items: center;
   justify-content: center;
   flex-direction: column;
