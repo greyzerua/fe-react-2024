@@ -1,6 +1,7 @@
 import { Outlet } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 
+import { BurgerContextProvider } from '@/contexts/burger-context';
 import { CartCountContextProvider } from '@/contexts/cart-count-context';
 
 import { Footer } from '../footer';
@@ -11,14 +12,16 @@ import 'react-toastify/ReactToastify.css';
 import styles from './layout-component.module.css';
 
 export const LayoutComponent = () => (
-    <CartCountContextProvider>
-        <ToastContainer />
-        <ThemeContainer className={styles.app}>
-            <HeaderComponent />
-            <main className={styles['app-main']}>
-                <Outlet />
-            </main>
-            <Footer />
-        </ThemeContainer>
-    </CartCountContextProvider>
+    <BurgerContextProvider>
+        <CartCountContextProvider>
+            <ToastContainer />
+            <ThemeContainer className={styles.app}>
+                <HeaderComponent />
+                <main className={styles['app-main']}>
+                    <Outlet />
+                </main>
+                <Footer />
+            </ThemeContainer>
+        </CartCountContextProvider>
+    </BurgerContextProvider>
 );

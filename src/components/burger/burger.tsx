@@ -1,8 +1,9 @@
-import { useState } from 'react';
+import { useContext } from 'react';
 
 import clsx from 'clsx';
 
 import { EAppPage } from '@/constants/link-urls';
+import { BurgerContext } from '@/contexts/burger-context';
 
 import { AppLink } from '../app-link';
 import { Footer } from '../footer';
@@ -11,12 +12,12 @@ import { ThemeSwitcher } from '../theme-switcher';
 import styles from './burger.module.css';
 
 export const Burger = () => {
-    const [isOpen, setIsOpen] = useState<boolean>(false);
+    const { isShown: isOpen, toggleBurger } = useContext(BurgerContext);
 
     const handleToggleMenu = () => {
         document.body.style.overflow = isOpen ? '' : 'hidden';
 
-        setIsOpen((previousIsOpened) => !previousIsOpened);
+        toggleBurger();
     };
 
     return (
