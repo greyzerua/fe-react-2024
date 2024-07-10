@@ -26,33 +26,36 @@ export const Burger = () => {
                 <span className={styles['burger__line']}></span>
             </button>
             <div className={clsx(styles['menu'], isOpen && styles['menu_active'])}>
-                <nav>
-                    <ul className={styles['menu__list']}>
-                        <li>
-                            <AppLink page={EAppPage.ROOT} className={styles['menu__link']} onClick={handleToggleMenu}>
-                                <span>About</span>
-                            </AppLink>
-                        </li>
-                        <li>
-                            <AppLink page={EAppPage.PRODUCTS} className={styles['menu__link']} onClick={handleToggleMenu}>
-                                <span>Products</span>
-                            </AppLink>
-                        </li>
-                        <li>
-                            <AppLink page={EAppPage.LOGIN} className={styles['menu__link']} onClick={handleToggleMenu}>
-                                <span>Login</span>
-                            </AppLink>
-                        </li>
-                        <li>
-                            <AppLink page={EAppPage.SIGNUP} className={styles['menu__link']} onClick={handleToggleMenu}>
-                                <span>Sign up</span>
-                            </AppLink>
-                        </li>
-                        <li className={styles['menu__link']}>
-                            <ThemeSwitcher />
-                        </li>
-                    </ul>
-                </nav>
+                <div className={styles['menu__wrap']}>
+                    <nav>
+                        <ul className={styles['menu__list']}>
+                            <li>
+                                <AppLink page={EAppPage.ROOT} className={styles['menu__link']} onClick={handleToggleMenu}>
+                                    <span>About</span>
+                                </AppLink>
+                            </li>
+                            <li>
+                                <AppLink page={EAppPage.PRODUCTS} className={styles['menu__link']} onClick={handleToggleMenu}>
+                                    <span>Products</span>
+                                </AppLink>
+                            </li>
+                            <li>
+                                <AppLink page={EAppPage.LOGIN} className={styles['menu__link']} onClick={handleToggleMenu}>
+                                    <span>Login</span>
+                                </AppLink>
+                            </li>
+                            <li>
+                                <AppLink page={EAppPage.SIGNUP} className={styles['menu__link']} onClick={handleToggleMenu}>
+                                    <span>Sign up</span>
+                                </AppLink>
+                            </li>
+                            <li className={styles['menu__link']}>
+                                <ThemeSwitcher />
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+
                 <Footer />
             </div>
         </div>

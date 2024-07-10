@@ -27,10 +27,9 @@
 
 .menu {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   flex-direction: column;
   position: fixed;
-  overflow: scroll;
   top: 64px;
   left: 0;
   height: calc(100% - 64px);
@@ -39,6 +38,14 @@
   transition: all .2s ease;
   transform: translateX(-100%);
   z-index: 100;
+}
+
+.menu__wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: scroll;
+  flex: 1;
 }
 
 .menu_active {
@@ -52,7 +59,7 @@
 
 .menu__list {
   display: flex;
-  padding: 159px 0 50px;
+  padding: 25px 0;
   align-items: center;
   justify-content: center;
   flex-direction: column;
@@ -92,4 +99,11 @@
 .burger_active .burger__line:nth-of-type(3) {
   top: 50%;
   transform: translate(-50%, 0%) rotate(-45deg);
+}
+
+@media (max-height: 566px) {
+
+  .menu__wrap {
+    align-items: stretch;
+  }
 }
