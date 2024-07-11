@@ -18,7 +18,7 @@ export const ProductsCard = ({ product }: Props) => {
 
     const navigate = useNavigate();
 
-    const { productCount, addSelectedProduct } = useAddToCart(id);
+    const { productCount, addSelectedProduct } = useAddToCart(product);
 
     const addToCard = (event: MouseEvent<HTMLButtonElement>) => {
         event.stopPropagation();

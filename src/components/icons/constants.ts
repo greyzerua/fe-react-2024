@@ -1,4 +1,5 @@
 import { ArrowDownIcon } from './arrow-down-icon';
+import { ArrowLeftIcon } from './arrow-left-icon';
 import { ArrowUpIcon } from './arrow-up-icon';
 import { BasketIcon } from './basket-icon';
 import { CloseIcon } from './close-icon';
@@ -10,10 +11,15 @@ import { LinkedinIcon } from './linkedin-icon';
 import { LoadingIcon } from './loading-icon';
 import { LogOutIcon } from './log-out-icon';
 import { LoginIcon } from './login-icon';
+import { MinusIcon } from './minus-icon';
 import { MoonIcon } from './moon-icon';
+import { PlusIcon } from './plus-icon';
 import { SearchIcon } from './search-icon';
 import { SunIcon } from './sun-icon';
+import { TrashIcon } from './trash-icon';
 import { UserIcon } from './user-icon';
+import { WalletIcon } from './wallet-icon';
+
 export enum EIconType {
     FB,
     INSTAGRAM,
@@ -31,6 +37,11 @@ export enum EIconType {
     EYE,
     EYE_CROSSED,
     LOGOUT,
+    TRASH_ICON,
+    PLUS,
+    MINUS,
+    ARROW_LEFT,
+    WALLET,
 }
 
 export const Icons = {
@@ -50,6 +61,11 @@ export const Icons = {
     [EIconType.EYE]: EyeIcon,
     [EIconType.EYE_CROSSED]: EyeCrossedIcon,
     [EIconType.LOGOUT]: LogOutIcon,
+    [EIconType.TRASH_ICON]: TrashIcon,
+    [EIconType.PLUS]: PlusIcon,
+    [EIconType.MINUS]: MinusIcon,
+    [EIconType.ARROW_LEFT]: ArrowLeftIcon,
+    [EIconType.WALLET]: WalletIcon,
 };
 
 export const ICON_COLORS = {
@@ -57,4 +73,5 @@ export const ICON_COLORS = {
     BLACK: 'var(--iconColor)',
     DISABLED: 'var(--arrowDisabledColor)',
     FILTER: 'var(--filterColor)',
+    CLOSE: 'var(--loginInput)',
 };

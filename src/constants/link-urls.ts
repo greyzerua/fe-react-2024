@@ -4,6 +4,7 @@ export enum EAppPage {
     SIGNUP = 'SIGNUP',
     PRODUCTS = 'PRODUCTS',
     PRODUCT = 'PRODUCT',
+    ORDER = 'ORDER',
     ROOT = 'ROOT',
 }
 
@@ -13,6 +14,7 @@ export const APP_LINK_URLS = {
     [EAppPage.SIGNUP]: '/sign-up',
     [EAppPage.PRODUCTS]: '/products',
     [EAppPage.PRODUCT]: '/product/:id',
+    [EAppPage.ORDER]: '/order',
     [EAppPage.ROOT]: '/',
 };
 

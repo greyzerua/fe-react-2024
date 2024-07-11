@@ -12,7 +12,7 @@ interface Props {
 }
 
 export const ProductCardInfo = ({ product }: Props) => {
-    const { productCount, addSelectedProduct } = useAddToCart(product.id);
+    const { productCount, addSelectedProduct } = useAddToCart(product);
 
     const addProduct = () => {
         addSelectedProduct();
