@@ -26,7 +26,7 @@ export const useBasketProducts = () => {
         (productId, count) => {
             const previousSelectedProducts = getSelectedProducts();
             const previousSelectedItem = previousSelectedProducts[productId];
-            if (count !== previousSelectedItem.count) {
+            if (previousSelectedItem && count !== previousSelectedItem.count) {
                 const updatedSelectedProducts = {
                     ...previousSelectedProducts,
                     [productId]: {

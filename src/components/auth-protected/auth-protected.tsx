@@ -10,9 +10,15 @@ import { EIconType, Icon } from '../icons';
 export const AuthProtected = ({ children }: ComponentProps<'div'>) => {
     const navigate = useNavigate();
 
-    const { verifyToken } = useAuth();
+    const { isAuthorized, verifyToken } = useAuth();
 
     const [isLoading, setIsLoading] = useState<boolean>(false);
+
+    useEffect(() => {
+        if (!isAuthorized) {
+            navigate(APP_LINK_URLS[EAppPage.LOGIN]);
+        }
+    }, [isAuthorized, navigate]);
 
     const verifyUser = useCallback(async () => {
         setIsLoading(true);

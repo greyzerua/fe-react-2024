@@ -1,5 +1,5 @@
 import type { ReactNode } from 'react';
-import { createContext, useState } from 'react';
+import { createContext, useEffect, useState } from 'react';
 
 interface BurgerContextType {
     isShown: boolean;
@@ -23,6 +23,10 @@ interface ProviderProps {
 
 export const BurgerContextProvider = ({ children }: ProviderProps) => {
     const [isShown, setIsShown] = useState<boolean>(false);
+
+    useEffect(() => {
+        document.body.style.overflow = isShown ? 'hidden' : '';
+    }, [isShown]);
 
     const openBurger = () => {
         setIsShown(true);

@@ -14,15 +14,9 @@ import styles from './burger.module.css';
 export const Burger = () => {
     const { isShown: isOpen, toggleBurger } = useContext(BurgerContext);
 
-    const handleToggleMenu = () => {
-        document.body.style.overflow = isOpen ? '' : 'hidden';
-
-        toggleBurger();
-    };
-
     return (
         <div className={styles.burger}>
-            <button onClick={handleToggleMenu} className={clsx(styles['burger__btn'], isOpen && styles['burger_active'])}>
+            <button onClick={toggleBurger} className={clsx(styles['burger__btn'], isOpen && styles['burger_active'])}>
                 <span className={styles['burger__line']}></span>
                 <span className={styles['burger__line']}></span>
             </button>
@@ -31,22 +25,22 @@ export const Burger = () => {
                     <nav>
                         <ul className={styles['menu__list']}>
                             <li>
-                                <AppLink page={EAppPage.ROOT} className={styles['menu__link']} onClick={handleToggleMenu}>
+                                <AppLink page={EAppPage.ROOT} className={styles['menu__link']} onClick={toggleBurger}>
                                     <span>About</span>
                                 </AppLink>
                             </li>
                             <li>
-                                <AppLink page={EAppPage.PRODUCTS} className={styles['menu__link']} onClick={handleToggleMenu}>
+                                <AppLink page={EAppPage.PRODUCTS} className={styles['menu__link']} onClick={toggleBurger}>
                                     <span>Products</span>
                                 </AppLink>
                             </li>
                             <li>
-                                <AppLink page={EAppPage.LOGIN} className={styles['menu__link']} onClick={handleToggleMenu}>
+                                <AppLink page={EAppPage.LOGIN} className={styles['menu__link']} onClick={toggleBurger}>
                                     <span>Login</span>
                                 </AppLink>
                             </li>
                             <li>
-                                <AppLink page={EAppPage.SIGNUP} className={styles['menu__link']} onClick={handleToggleMenu}>
+                                <AppLink page={EAppPage.SIGNUP} className={styles['menu__link']} onClick={toggleBurger}>
                                     <span>Sign up</span>
                                 </AppLink>
                             </li>

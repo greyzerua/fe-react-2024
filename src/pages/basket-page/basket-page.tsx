@@ -48,8 +48,11 @@ export const BasketPage = () => {
                         {selectedProducts.length > 0 && (
                             <div className={styles['basket__purchase']}>
                                 <p className={styles['basket__purchase-total']}>
-                                    Total:<span className={styles['basket__purchase-total-price']}>{totalPrice}</span>
-                                    <span className={styles['basket__currency']}>₴</span>
+                                    Total:
+                                    <span className={styles['basket__purchase-total-price']}>
+                                        {totalPrice}
+                                        <span className={styles['basket__currency']}>₴</span>
+                                    </span>
                                 </p>
                                 <button
                                     className={`${styles['basket__purchase-btn']} ${styles['basket__btn']}`}

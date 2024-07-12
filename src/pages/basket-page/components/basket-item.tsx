@@ -64,7 +64,7 @@ export const BasketItem = ({ product, updateProductCount, deleteSelectedProduct 
                         {count * price}
                         <span className={styles['basket__currency']}>₴</span>
                     </p>
-                    <button className={styles['basket__product_btn']} onClick={deleteItem}>
+                    <button className={`${styles['basket__product_btn']} ${styles['basket__product_btn-trash']}`} onClick={deleteItem}>
                         <Icon iconType={EIconType.TRASH_ICON} stroke={ICON_COLORS.DISABLED} />
                     </button>
                 </div>
