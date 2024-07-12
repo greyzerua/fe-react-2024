@@ -4,6 +4,7 @@ import clsx from 'clsx';
 
 import { EAppPage } from '@/constants/link-urls';
 import { BurgerContext } from '@/contexts/burger-context';
+import { useAuth } from '@/hooks/useAuth';
 
 import { AppLink } from '../app-link';
 import { Footer } from '../footer';
@@ -12,7 +13,14 @@ import { ThemeSwitcher } from '../theme-switcher';
 import styles from './burger.module.css';
 
 export const Burger = () => {
+    const { isAuthorized, onLogout } = useAuth();
+
     const { isShown: isOpen, toggleBurger } = useContext(BurgerContext);
+
+    const onLogoutClick = () => {
+        onLogout();
+        toggleBurger();
+    };
 
     return (
         <div className={styles.burger}>
@@ -35,9 +43,15 @@ export const Burger = () => {
                                 </AppLink>
                             </li>
                             <li>
-                                <AppLink page={EAppPage.LOGIN} className={styles['menu__link']} onClick={toggleBurger}>
-                                    <span>Login</span>
-                                </AppLink>
+                                {isAuthorized ? (
+                                    <button onClick={onLogoutClick} className={styles['menu__link']}>
+                                        Logout
+                                    </button>
+                                ) : (
+                                    <AppLink page={EAppPage.LOGIN} className={styles['menu__link']} onClick={toggleBurger}>
+                                        <span>Login</span>
+                                    </AppLink>
+                                )}
                             </li>
                             <li>
                                 <AppLink page={EAppPage.SIGNUP} className={styles['menu__link']} onClick={toggleBurger}>
