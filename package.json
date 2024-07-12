@@ -6,8 +6,8 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "lint": "npm run lint:ts && npm run lint:css",
-    "lint:ts": "npx eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0 --fix",
-    "lint:css": "npx stylelint --config .stylelintrc --allow-empty-input ./src/**/*.css --fix",
+    "lint:ts": "npx eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "lint:css": "npx stylelint --config .stylelintrc --allow-empty-input ./src/**/*.css",
     "preview": "vite preview",
     "prepare": "husky install"
   },

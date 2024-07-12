@@ -2,6 +2,10 @@
   margin: 10px 0 50px;
 }
 
+.basket__title {
+  font-size: 2rem;
+}
+
 .basket {
   margin: 64px auto;
   border: 1px solid var(--arrowDisabledColor);
@@ -112,6 +116,15 @@
 
 @media (max-width:870px) {
 
+  .no-result-message {
+    font-size: 1rem;
+    margin: 40px 0;
+  }
+
+  .basket__title {
+    font-size: 1.68rem;
+  }
+
   .basket__products {
     margin: 40px 0 30px;
     gap: 30px;
@@ -140,7 +153,8 @@
   }
 
   .basket__purchase-btn {
-    max-width: 136px
+    max-width: 136px;
+    margin-bottom: 20px;
   }
 
   .basket__btn {
@@ -149,7 +163,7 @@
 
   .basket__summary-btn {
     min-height: 24px;
-    margin-top: 20px;
+    font-size: 1rem;
     padding: 7px 0 7px 7px;
     border: unset;
   }

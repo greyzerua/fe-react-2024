@@ -21,7 +21,7 @@ export const BasketPage = () => {
                     <button className={styles['basket__close-btn']} onClick={() => navigate(-1)}>
                         <Icon iconType={EIconType.CLOSE} />
                     </button>
-                    <h2>Cart ({selectedProducts.length})</h2>
+                    <h2 className={styles['basket__title']}>Cart ({selectedProducts.length})</h2>
                     {selectedProducts.length > 0 ? (
                         <div className={styles['basket__products']}>
                             {selectedProducts.map((product) => (
