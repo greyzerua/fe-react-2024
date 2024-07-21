@@ -2,6 +2,9 @@ import { useMemo } from 'react';
 
 import clsx from 'clsx';
 
+import { EIconType, Icon } from '@/components/icons';
+import { ICON_COLORS } from '@/components/icons/constants';
+
 import { DOTS } from '../../constants';
 import { getPaginationRange } from '../../utils/get-pagination-range';
 
@@ -30,12 +33,14 @@ export const ProductPagination = ({ totalCount, pageSize, currentPage, onPageCha
         onPageChange(++currentPage);
     };
 
+    const isPreviousDisabled = currentPage === 1;
+    const isNextDisabled = currentPage === pageCount;
     return (
         <div>
             <ul className={styles['products-pagination']}>
                 <li>
-                    <button disabled={currentPage === 1} className={getButtonClassName()} onClick={onPreviousClick}>
-                        &lt;
+                    <button disabled={isPreviousDisabled} className={getButtonClassName()} onClick={onPreviousClick}>
+                        <Icon iconType={EIconType.CHEVRON_LEFT} stroke={isPreviousDisabled ? ICON_COLORS.DISABLED : ICON_COLORS.BLACK} />
                     </button>
                 </li>
                 {range.map((item, index) => (
@@ -50,8 +55,8 @@ export const ProductPagination = ({ totalCount, pageSize, currentPage, onPageCha
                     </li>
                 ))}
                 <li>
-                    <button disabled={currentPage === pageCount} className={getButtonClassName()} onClick={onNextClick}>
-                        &gt;
+                    <button disabled={isNextDisabled} className={getButtonClassName()} onClick={onNextClick}>
+                        <Icon iconType={EIconType.CHEVRON_RIGHT} stroke={isNextDisabled ? ICON_COLORS.DISABLED : ICON_COLORS.BLACK} />
                     </button>
                 </li>
             </ul>

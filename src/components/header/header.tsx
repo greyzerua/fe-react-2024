@@ -5,7 +5,7 @@ import { BurgerContext } from '@/contexts/burger-context';
 
 import { EAppPage } from '../../constants/link-urls';
 import { AppLink } from '../app-link';
-import { Auth } from '../auth';
+import { AuthButtons } from '../auth-buttons';
 import { Basket } from '../basket';
 import { Burger } from '../burger';
 import { ThemeSwitcher } from '../theme-switcher';
@@ -49,7 +49,7 @@ export const HeaderComponent = () => {
                             <Burger />
                         </div>
                         <div className={styles['header__auth']}>
-                            <Auth />
+                            <AuthButtons />
                         </div>
                     </div>
                 </div>

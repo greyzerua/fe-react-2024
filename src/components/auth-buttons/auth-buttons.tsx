@@ -4,11 +4,11 @@ import { EAppPage } from '../../constants/link-urls';
 import { AppLink } from '../app-link';
 import { EIconType, Icon } from '../icons';
 
-import styles from './auth.module.css';
+import styles from './auth-buttons.module.css';
 
 const BUTTON_CLASSNAME = styles['auth-buttons__button'];
 
-export const Auth = () => {
+export const AuthButtons = () => {
     const { isAuthorized, onLogout } = useAuth();
 
     return (

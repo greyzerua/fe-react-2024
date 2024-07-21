@@ -2,6 +2,8 @@ import { ArrowDownIcon } from './arrow-down-icon';
 import { ArrowLeftIcon } from './arrow-left-icon';
 import { ArrowUpIcon } from './arrow-up-icon';
 import { BasketIcon } from './basket-icon';
+import { ChevronLeftIcon } from './chevron-left-icon';
+import { ChevronRightIcon } from './chevron-right-icon';
 import { CloseIcon } from './close-icon';
 import { EyeIcon } from './eye';
 import { EyeCrossedIcon } from './eye-crossed';
@@ -42,6 +44,8 @@ export enum EIconType {
     MINUS,
     ARROW_LEFT,
     WALLET,
+    CHEVRON_LEFT,
+    CHEVRON_RIGHT,
 }
 
 export const Icons = {
@@ -65,6 +69,8 @@ export const Icons = {
     [EIconType.PLUS]: PlusIcon,
     [EIconType.MINUS]: MinusIcon,
     [EIconType.ARROW_LEFT]: ArrowLeftIcon,
+    [EIconType.CHEVRON_LEFT]: ChevronLeftIcon,
+    [EIconType.CHEVRON_RIGHT]: ChevronRightIcon,
     [EIconType.WALLET]: WalletIcon,
 };
 

@@ -73,7 +73,7 @@ export const ProductsPage = () => {
                     <div className={styles['products__filters-left']}>
                         <ProductCategoryList categories={categories} onCategoriesChange={setCategories} />
                         <div className={styles['products__dropdown-wrap']}>
-                            <p className={styles['products__dropdown-text']}>Sort by:</p>
+                            <p className={styles['products__dropdown-text']}>Sort&nbsp;by:</p>
                             <ProductSortDropdown onSortingChange={setSortType} />
                         </div>
                     </div>
