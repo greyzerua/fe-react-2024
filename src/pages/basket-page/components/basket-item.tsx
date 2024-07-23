@@ -1,7 +1,9 @@
 import { useEffect, useState } from 'react';
+import { generatePath, useNavigate } from 'react-router-dom';
 
 import { EIconType, Icon } from '@/components/icons';
 import { ICON_COLORS } from '@/components/icons/constants';
+import { APP_LINK_URLS, EAppPage } from '@/constants/link-urls';
 import type { SelectedProduct } from '@/interfaces/selected-product';
 
 import type { DeleteSelectedProduct, UpdateSelectedProductCount } from '../typedef';
@@ -18,7 +20,7 @@ export const BasketItem = ({ product, updateProductCount, deleteSelectedProduct 
     const { productId, image, title, price } = product;
 
     const [count, setCount] = useState<number>(product.count);
-
+    const navigate = useNavigate();
     useEffect(() => {
         updateProductCount(productId, count);
     }, [count, productId, updateProductCount]);
@@ -35,8 +37,11 @@ export const BasketItem = ({ product, updateProductCount, deleteSelectedProduct 
         deleteSelectedProduct(productId);
     };
 
+    const goToProduct = () => {
+        navigate(generatePath(APP_LINK_URLS[EAppPage.PRODUCT], { id: productId }));
+    };
     return (
-        <div className={styles['basket__product']}>
+        <div className={styles['basket__product']} onClick={goToProduct}>
             <div className={styles['basket__product_details']}>
                 <div className={styles['basket__product__img-wrap']}>
                     <img src={image} className={styles['basket__product__img']} alt="" />

@@ -6,25 +6,23 @@ import { EIconType, Icon } from '../icons';
 
 import styles from './auth-buttons.module.css';
 
-const BUTTON_CLASSNAME = styles['auth-buttons__button'];
-
 export const AuthButtons = () => {
     const { isAuthorized, onLogout } = useAuth();
 
     return (
-        <div className={styles['auth-buttons']}>
+        <div className={styles['container']}>
             {isAuthorized ? (
-                <button onClick={onLogout} className={`${BUTTON_CLASSNAME} ${styles['auth-buttons__button_logout']}`}>
+                <button onClick={onLogout} className={`${styles.button} ${styles.logout}`}>
                     <Icon iconType={EIconType.LOGOUT} />
                     Logout
                 </button>
             ) : (
-                <AppLink page={EAppPage.LOGIN} className={`${BUTTON_CLASSNAME} ${styles['auth-buttons__button_login']}`}>
+                <AppLink page={EAppPage.LOGIN} className={`${styles.button} ${styles.logout}`}>
                     <Icon iconType={EIconType.LOGIN} />
                     Login
                 </AppLink>
             )}
-            <AppLink page={EAppPage.SIGNUP} className={`${BUTTON_CLASSNAME} ${styles['auth-buttons__button_sign-up']}`}>
+            <AppLink page={EAppPage.SIGNUP} className={`${styles.button} ${styles['sign-up']}`}>
                 <Icon iconType={EIconType.USER} />
                 Sign up
             </AppLink>

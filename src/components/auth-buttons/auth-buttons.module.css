@@ -1,9 +1,9 @@
-.auth-buttons {
+.container {
   display: flex;
   gap: 12px;
 }
 
-.auth-buttons__button {
+.button {
   display: flex;
   align-items: center;
   gap: 5px;
@@ -15,21 +15,21 @@
   transition: .2s all;
 }
 
-.auth-buttons__button_login,
-.auth-buttons__button_logout {
+.login,
+.logout {
   color: var(--primaryWhite);
   background-color: var(--darkGrey);
 }
 
-.auth-buttons__button_login,
-.auth-buttons__button_logout:hover {
+.login,
+.logout:hover {
   background-color: var(--primaryButtonHoverColor);
 }
 
-.auth-buttons__button_sign-up {
+.sign-up {
   background-color: var(--secondaryButtonColor);
 }
 
-.auth-buttons__button_sign-up:hover {
+.sign-up:hover {
   background-color: var(--secondaryButtonHoverColor);
 }

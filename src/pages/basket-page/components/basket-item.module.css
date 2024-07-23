@@ -6,6 +6,7 @@
   padding: 10px;
   border: 1px solid transparent;
   border-radius: 20px;
+  cursor: pointer;
 }
 
 .basket__product:hover {
