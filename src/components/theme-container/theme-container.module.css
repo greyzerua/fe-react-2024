@@ -1,0 +1,39 @@
+.light-theme {
+  --iconColor: var(--primaryBlack);
+  --bgColor: var(--primaryWhite);
+  --textColor: var(--primaryBlack);
+  --borderColor: var(--lightGrey);
+  --filterColor: var(--primaryGrey);
+  --filterBorder: var(--secondaryGrey);
+  --focusInputColor: var(--darkGrey);
+  --focusInputBackground: var(--greyHover);
+  --dropdownBackground: var(--primaryWhite);
+  --arrowDisabledColor: var(--lightGrey);
+  --borderColorCategory: var(--secondaryGrey);
+  --textColorCategory: var(--primaryGrey);
+  --backButton: var(--greyHover);
+  --backColorText: var(--darkGrey);
+  --arrowBorder: var(--greyHover);
+  --loginInput: var(--primaryGrey);
+  --themeSwitcher: var(--primaryBlack);
+}
+
+.dark-theme {
+  --iconColor: var(--primaryWhite);
+  --bgColor: var(--primaryBlack);
+  --textColor: var(--primaryWhite);
+  --borderColor: var(--darkGrey);
+  --filterColor: var(--primaryWhite);
+  --filterBorder: var(--primaryGrey);
+  --focusInputColor: var(--primaryWhite);
+  --focusInputBackground: var(--darkGrey);
+  --dropdownBackground: var(--darkGrey);
+  --arrowDisabledColor: var(--primaryGrey);
+  --borderColorCategory: var(--primaryGrey);
+  --textColorCategory: var(--primaryWhite);
+  --backButton: var(--primaryGrey);
+  --backColorText: var(--primaryWhite);
+  --arrowBorder: var(--primaryGrey);
+  --loginInput: var(--lightGrey);
+  --themeSwitcher: var(--primaryWhite);
+}

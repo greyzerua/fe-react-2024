@@ -1,0 +1,165 @@
+.login {
+  margin: 64px auto;
+  border: 1px solid var(--arrowDisabledColor);
+  border-radius: 40px;
+  max-width: 66%;
+  padding: 80px 15px;
+}
+
+.login__title {
+  font-weight: 700;
+  font-size: 2.25rem;
+  margin-bottom: 50px;
+}
+
+.login__form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  max-width: 49%;
+  margin: 0 auto;
+}
+
+.login__form_inner {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+}
+
+.login__form_input {
+  width: 100%;
+  border: 1px solid var(--filterBorder);
+  border-radius: 50px;
+  color: var(--loginInput);
+  font-size: 1rem;
+  padding: 0 20px;
+  min-height: 45px;
+  transition: .2s all ease;
+}
+
+.login__form_input_password {
+  padding-right: 42px;
+}
+
+.login__form_input::placeholder {
+  color: var(--loginInput);
+  font-family: "Montserrat";
+  font-size: 1rem;
+}
+
+.login__form_input:hover,
+.login__form_input:focus {
+  background-color: var(--focusInputBackground);
+}
+
+.login__form_input:focus {
+  font-weight: 600;
+}
+
+.login__form_input_wrap {
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 100%;
+}
+
+.login__form_input_btn {
+  display: flex;
+  position: absolute;
+  right: 20px;
+}
+
+.shown-password {
+  font-weight: 600;
+}
+
+.login__form_input-error {
+  border: 1px solid var(--secondaryButtonHoverColor);
+}
+
+.login__form_error-text {
+  color: var(--secondaryButtonHoverColor);
+  font-size: 13px;
+}
+
+.login__auth {
+  display: flex;
+  flex-direction: column;
+  margin-top: 50px;
+  gap: 12px;
+  width: 100%;
+}
+
+.login__auth_button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+  gap: 5px;
+  width: 100%;
+  padding: 0 13px 0 10px;
+  border-radius: 40px;
+  min-height: 45px;
+  box-sizing: border-box;
+  line-height: 34px;
+  transition: .2s all;
+}
+
+.login__auth_button:disabled {
+  background-color: transparent;
+  border: 1px solid var(--arrowDisabledColor);
+  color: var(--arrowDisabledColor);
+}
+
+.login__auth_button-login {
+  color: var(--primaryWhite);
+  background-color: var(--secondaryButtonColor);
+}
+
+.login__auth_button-login:not(:disabled):hover {
+  background-color: var(--secondaryButtonHoverColor);
+}
+
+.login__auth_button-sign-up {
+  background-color: var(--focusInputBackground);
+  color: var(--iconColor);
+}
+
+.login__auth_button-sign-up:hover {
+  background-color: var(--primaryButtonHoverColor);
+}
+
+@media (max-width: 900px) {
+
+  .login__form {
+    max-width: 68%;
+  }
+}
+
+@media (max-width: 713px) {
+
+  .login__form {
+    max-width: 88%;
+  }
+}
+
+@media (max-width: 550px) {
+
+  .login {
+    margin: 30px auto;
+    border: unset;
+    max-width: 100%;
+    padding: unset;
+  }
+
+  .login__form {
+    max-width: 100%;
+  }
+
+  .login__title {
+    font-weight: 600;
+    font-size: 1.68rem;
+  }
+}

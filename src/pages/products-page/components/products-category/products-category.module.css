@@ -1,0 +1,31 @@
+.product-category__button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  padding: 0 20px;
+  border-radius: 50px;
+  background-color: transparent;
+  border: 1px solid var(--filterBorder);
+  color: var(--filterColor);
+  font-size: .87rem;
+  font-weight: 600;
+  transition: .3s all ease;
+}
+
+.product-category__button:hover,
+.product-category__button_active {
+  background-color: var(--secondaryButtonColor);
+  color: var(--primaryWhite);
+}
+
+.product-category__button_active:hover {
+  background-color: var(--secondaryButtonHoverColor);
+}
+
+@media (max-width: 500px) {
+
+  .product-category__button {
+    width: 85%;
+  }
+}

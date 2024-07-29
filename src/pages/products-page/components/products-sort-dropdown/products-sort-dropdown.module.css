@@ -1,0 +1,68 @@
+.products-sort-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.products-sort-dropdown__button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  min-width: 196px;
+  height: 40px;
+  padding: 0 20px;
+  font-weight: 600;
+  border-radius: 20px;
+  color: var(--filterColor);
+  border: 1px solid var(--filterBorder);
+  transition: background-color .3s ease, color .3s ease;
+  font-size: .87rem;
+  z-index: 1;
+}
+
+.products-sort-dropdown__arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.products-sort-dropdown__list {
+  position: absolute;
+  left: 0;
+  opacity: 0;
+  padding-top: 40px;
+  border-radius: 20px;
+  width: 100%;
+  background-color: var(--dropdownBackground);
+  border: 1px solid var(--filterBorder);
+  z-index: 0;
+  transition: .3s all ease;
+  font-size: .87rem;
+  transform: translateY(-40px);
+}
+
+.products-sort-dropdown__list-item {
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  height: 40px;
+  border-radius: 20px;
+  color: var(--filterColor);
+  font-weight: 600;
+  cursor: pointer;
+  transition: .3s all ease;
+}
+
+.products-sort-dropdown_active .products-sort-dropdown__list {
+  opacity: 1;
+}
+
+.products-sort-dropdown_active .products-sort-dropdown__button {
+  border: 0;
+}
+
+.products-sort-dropdown__button:hover,
+.products-sort-dropdown__list-item:hover {
+  background-color: var(--secondaryButtonColor);
+  color: var(--primaryWhite);
+}

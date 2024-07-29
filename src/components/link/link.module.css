@@ -1,0 +1,5 @@
+.link {
+  font-weight: 500;
+  color: var(--primaryWhite);
+  text-decoration: inherit;
+}

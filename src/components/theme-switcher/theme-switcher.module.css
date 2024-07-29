@@ -1,0 +1,49 @@
+.theme-switcher {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.theme-switcher__button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  padding: 0;
+  background-color: transparent;
+}
+
+.theme-switcher__button path {
+  transition: .3s all;
+  stroke: var(--primaryGrey);
+}
+
+.theme-switcher__button_active path {
+  stroke: var(--primaryWhite);
+}
+
+.theme-switcher__button:hover path {
+  stroke: var(--primaryWhite);
+}
+
+.theme-switcher__separator {
+  width: 1px;
+  height: 20px;
+  background-color: var(--primaryGrey);
+}
+
+@media (max-width: 800px) {
+
+  .theme-switcher {
+    margin-top: 20px;
+  }
+
+  .theme-switcher__button_active path {
+    stroke: var(--themeSwitcher);
+  }
+
+  .theme-switcher__button:hover path {
+    stroke: var(--iconColor);
+  }
+}

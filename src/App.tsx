@@ -1,21 +1,33 @@
-import reactLogo from '@/assets/react.svg';
+import { Route, Routes } from 'react-router-dom';
 
-import { HeaderComponent } from './components/header/Header.component.tsx';
+import { AuthProtected } from './components/auth-protected/auth-protected';
+import { LayoutComponent } from './components/layout-component/layout-component';
+import { PageNotFound } from './components/page-not-found/page-not-found';
+import { APP_LINK_URLS, EAppPage } from './constants/link-urls';
+import { AboutPage } from './pages/about-page';
+import { BasketPage } from './pages/basket-page/basket-page';
+import { LoginPage } from './pages/login-page/login-page';
+import { ProductPage } from './pages/product-page/product-page';
+import { ProductsPage } from './pages/products-page';
 
-import './App.css';
-
-function App() {
-    return (
-        <>
-            <HeaderComponent />
-            <main className="home">
-                <h1>
-                    <img src={reactLogo} alt="React logo" />
-                    Home page
-                </h1>
-            </main>
-        </>
-    );
-}
+const App = () => (
+    <Routes>
+        <Route path={APP_LINK_URLS[EAppPage.ROOT]} element={<LayoutComponent />}>
+            <Route index element={<AboutPage />} />
+            <Route path={APP_LINK_URLS[EAppPage.PRODUCTS]} element={<ProductsPage />} />
+            <Route path={APP_LINK_URLS[EAppPage.PRODUCT]} element={<ProductPage />} />
+            <Route path={APP_LINK_URLS[EAppPage.LOGIN]} element={<LoginPage />} />
+            <Route
+                path={APP_LINK_URLS[EAppPage.BASKET]}
+                element={
+                    <AuthProtected>
+                        <BasketPage />
+                    </AuthProtected>
+                }
+            />
+            <Route path="*" element={<PageNotFound />} />
+        </Route>
+    </Routes>
+);
 
 export default App;

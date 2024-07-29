@@ -1,0 +1,13 @@
+.title {
+  color: var(--textColor);
+  font-weight: 700;
+  font-size: 2.25rem;
+  font-weight: 700;
+}
+
+@media (max-width: 600px) {
+
+  .title {
+    font-size: 1.68rem;
+  }
+}

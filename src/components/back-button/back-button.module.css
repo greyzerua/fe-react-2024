@@ -1,0 +1,13 @@
+.back-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 0 15px;
+  height: 40px;
+  border: 1px solid var(--borderColorCategory);
+  color: var(--textColorCategory);
+  border-radius: 50px;
+  font-size: .87rem;
+  font-weight: 500;
+}
