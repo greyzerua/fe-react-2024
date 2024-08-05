@@ -3,6 +3,7 @@ import { generatePath, useNavigate } from 'react-router-dom';
 
 import { EIconType, Icon } from '@/components/icons';
 import { ICON_COLORS } from '@/components/icons/constants';
+import { Link } from '@/components/link/link';
 import { APP_LINK_URLS, EAppPage } from '@/constants/link-urls';
 import type { SelectedProduct } from '@/interfaces/selected-product';
 
@@ -41,18 +42,18 @@ export const BasketItem = ({ product, updateProductCount, deleteSelectedProduct 
         navigate(generatePath(APP_LINK_URLS[EAppPage.PRODUCT], { id: productId }));
     };
     return (
-        <div className={styles['basket__product']} onClick={goToProduct}>
+        <div className={styles['basket__product']}>
             <div className={styles['basket__product_details']}>
-                <div className={styles['basket__product__img-wrap']}>
+                <Link className={styles['basket__product__img-wrap']} onClick={goToProduct}>
                     <img src={image} className={styles['basket__product__img']} alt="" />
-                </div>
-                <div className={styles['basket__product_info']}>
+                </Link>
+                <Link className={styles['basket__product_info']} onClick={goToProduct}>
                     <p className={styles['basket__product_details-name']}>{title}</p>
                     <p className={styles['basket__price']}>
                         {price}
                         <span className={styles['basket__currency']}>₴</span>
                     </p>
-                </div>
+                </Link>
             </div>
             <div className={styles['basket__product_item']}>
                 <div className={styles['basket__product_quantity_wrap']}>
